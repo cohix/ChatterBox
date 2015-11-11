@@ -12,6 +12,7 @@
 		39E0B9D61BF3F5DA001E91AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E0B9D41BF3F5DA001E91AD /* Main.storyboard */; };
 		39E0B9D81BF3F5DA001E91AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39E0B9D71BF3F5DA001E91AD /* Assets.xcassets */; };
 		39E0B9DB1BF3F5DA001E91AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E0B9D91BF3F5DA001E91AD /* LaunchScreen.storyboard */; };
+		E28E3A5B1BF3F6E9001FD647 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E3A5A1BF3F6E9001FD647 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		39E0B9D71BF3F5DA001E91AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39E0B9DA1BF3F5DA001E91AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39E0B9DC1BF3F5DA001E91AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E28E3A5A1BF3F6E9001FD647 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				39E0B9D71BF3F5DA001E91AD /* Assets.xcassets */,
 				39E0B9D91BF3F5DA001E91AD /* LaunchScreen.storyboard */,
 				39E0B9DC1BF3F5DA001E91AD /* Info.plist */,
+				E28E3A5A1BF3F6E9001FD647 /* User.swift */,
 			);
 			path = ChatterBox;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			files = (
 				39E0B9D31BF3F5DA001E91AD /* ViewController.swift in Sources */,
 				39E0B9D11BF3F5DA001E91AD /* AppDelegate.swift in Sources */,
+				E28E3A5B1BF3F6E9001FD647 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +288,7 @@
 				39E0B9E11BF3F5DA001E91AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
