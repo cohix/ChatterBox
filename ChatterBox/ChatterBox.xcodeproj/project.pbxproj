@@ -12,6 +12,7 @@
 		39E0B9D61BF3F5DA001E91AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E0B9D41BF3F5DA001E91AD /* Main.storyboard */; };
 		39E0B9D81BF3F5DA001E91AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39E0B9D71BF3F5DA001E91AD /* Assets.xcassets */; };
 		39E0B9DB1BF3F5DA001E91AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E0B9D91BF3F5DA001E91AD /* LaunchScreen.storyboard */; };
+		C657F11FED46C77E759D2B8E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A968E9326BCA5F8E869D0561 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E28E3A5B1BF3F6E9001FD647 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E3A5A1BF3F6E9001FD647 /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,9 @@
 		39E0B9D71BF3F5DA001E91AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39E0B9DA1BF3F5DA001E91AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39E0B9DC1BF3F5DA001E91AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68744FAC25EEDD19E745CFEA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6C802F4EF324D21D4ED52ECE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A968E9326BCA5F8E869D0561 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E28E3A5A1BF3F6E9001FD647 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C657F11FED46C77E759D2B8E /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				39E0B9CF1BF3F5DA001E91AD /* ChatterBox */,
 				39E0B9CE1BF3F5DA001E91AD /* Products */,
+				52286B52027834DB9334413D /* Pods */,
+				9095D79AD9F08C044FE07DFA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,23 @@
 			path = ChatterBox;
 			sourceTree = "<group>";
 		};
+		52286B52027834DB9334413D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				68744FAC25EEDD19E745CFEA /* Pods.debug.xcconfig */,
+				6C802F4EF324D21D4ED52ECE /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9095D79AD9F08C044FE07DFA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A968E9326BCA5F8E869D0561 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39E0B9DF1BF3F5DA001E91AD /* Build configuration list for PBXNativeTarget "ChatterBox" */;
 			buildPhases = (
+				3326C6E6413AFA5D83CB57FC /* Check Pods Manifest.lock */,
 				39E0B9C91BF3F5DA001E91AD /* Sources */,
 				39E0B9CA1BF3F5DA001E91AD /* Frameworks */,
 				39E0B9CB1BF3F5DA001E91AD /* Resources */,
+				C317312A151E535995D8B0CC /* Embed Pods Frameworks */,
+				98721043FA1281362DA29E9B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3326C6E6413AFA5D83CB57FC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		98721043FA1281362DA29E9B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C317312A151E535995D8B0CC /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		39E0B9C91BF3F5DA001E91AD /* Sources */ = {
@@ -249,6 +324,7 @@
 		};
 		39E0B9E01BF3F5DA001E91AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68744FAC25EEDD19E745CFEA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ChatterBox/Info.plist;
@@ -260,6 +336,7 @@
 		};
 		39E0B9E11BF3F5DA001E91AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C802F4EF324D21D4ED52ECE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ChatterBox/Info.plist;
