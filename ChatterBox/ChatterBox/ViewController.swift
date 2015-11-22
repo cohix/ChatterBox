@@ -35,7 +35,7 @@ class ViewController: UIViewController, AVCaptureAudioDataOutputSampleBufferDele
         var mic_input: AVCaptureDeviceInput!
         
         let audio_output = AVCaptureAudioDataOutput()
-        audio_output.setSampleBufferDelegate(self, queue: dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
+        audio_output.setSampleBufferDelegate(self, queue: dispatch_get_main_queue())
         
         do
         {
@@ -54,7 +54,7 @@ class ViewController: UIViewController, AVCaptureAudioDataOutputSampleBufferDele
     
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!)
     {
-        print("hello")
+        print("Hello")
     }
 }
 
