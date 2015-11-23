@@ -25,15 +25,12 @@ class CBAudioPlayer: NSObject, CBMicrophoneHandlerDelegate
     
     func handleBuffer(data: NSData)
     {
+        print(data)
+        
         self.playerNode.scheduleBuffer(self.toPCMBuffer(data), completionHandler: nil)
         
         if self.engine.running
         {
-            self.playerNode.play()
-        }
-        else
-        {
-            self.startEngine()
             self.playerNode.play()
         }
     }
