@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3953DFA71C03BCCB0025805F /* CBMicrophoneHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3953DFA61C03BCCB0025805F /* CBMicrophoneHandler.swift */; };
+		3953DFA91C03C0920025805F /* CBAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3953DFA81C03C0920025805F /* CBAudioPlayer.swift */; };
 		39E0B9D11BF3F5DA001E91AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E0B9D01BF3F5DA001E91AD /* AppDelegate.swift */; };
 		39E0B9D31BF3F5DA001E91AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E0B9D21BF3F5DA001E91AD /* ViewController.swift */; };
 		39E0B9D61BF3F5DA001E91AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E0B9D41BF3F5DA001E91AD /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3953DFA61C03BCCB0025805F /* CBMicrophoneHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBMicrophoneHandler.swift; sourceTree = "<group>"; };
+		3953DFA81C03C0920025805F /* CBAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBAudioPlayer.swift; sourceTree = "<group>"; };
 		39E0B9CD1BF3F5DA001E91AD /* ChatterBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatterBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E0B9D01BF3F5DA001E91AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39E0B9D21BF3F5DA001E91AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 				39E0B9D91BF3F5DA001E91AD /* LaunchScreen.storyboard */,
 				39E0B9DC1BF3F5DA001E91AD /* Info.plist */,
 				E28E3A5A1BF3F6E9001FD647 /* User.swift */,
+				3953DFA61C03BCCB0025805F /* CBMicrophoneHandler.swift */,
+				3953DFA81C03C0920025805F /* CBAudioPlayer.swift */,
 			);
 			path = ChatterBox;
 			sourceTree = "<group>";
@@ -215,7 +221,9 @@
 			files = (
 				39E0B9D31BF3F5DA001E91AD /* ViewController.swift in Sources */,
 				39E0B9D11BF3F5DA001E91AD /* AppDelegate.swift in Sources */,
+				3953DFA91C03C0920025805F /* CBAudioPlayer.swift in Sources */,
 				E28E3A5B1BF3F6E9001FD647 /* User.swift in Sources */,
+				3953DFA71C03BCCB0025805F /* CBMicrophoneHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

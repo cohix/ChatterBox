@@ -12,49 +12,29 @@ import AVFoundation
 class ViewController: UIViewController, AVCaptureAudioDataOutputSampleBufferDelegate
 {
 
+    var micHandler: CBMicrophoneHandler!
+    var audioPlayer: CBAudioPlayer!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.setupMicrophone()
+        self.audioPlayer = CBAudioPlayer()
+        self.micHandler = CBMicrophoneHandler(delegate: self.audioPlayer)
+        
+        self.start()
+    }
+    
+    func start()
+    {
+        self.micHandler.startIfNeeded()
     }
 
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    func setupMicrophone()
-    {
-        let session = AVCaptureSession()
-        session.sessionPreset = AVCaptureSessionPresetMedium
-        
-        let mic = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeAudio)
-        var mic_input: AVCaptureDeviceInput!
-        
-        let audio_output = AVCaptureAudioDataOutput()
-        audio_output.setSampleBufferDelegate(self, queue: dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
-        
-        do
-        {
-            mic_input = try AVCaptureDeviceInput(device: mic)
-        }
-        catch
-        {
-            return
-        }
-        
-        session.addInput(mic_input)
-        session.addOutput(audio_output)
-        
-        session.startRunning()
-    }
-    
-    func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!)
-    {
-        print("hello")
     }
 }
 
