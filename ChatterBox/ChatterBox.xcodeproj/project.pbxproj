@@ -17,6 +17,7 @@
 		39E0B9DB1BF3F5DA001E91AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E0B9D91BF3F5DA001E91AD /* LaunchScreen.storyboard */; };
 		C657F11FED46C77E759D2B8E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A968E9326BCA5F8E869D0561 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E28E3A5B1BF3F6E9001FD647 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E3A5A1BF3F6E9001FD647 /* User.swift */; };
+		E2EAFA511C03CD9500B746E0 /* CBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EAFA501C03CD9500B746E0 /* CBNetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		6C802F4EF324D21D4ED52ECE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A968E9326BCA5F8E869D0561 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E28E3A5A1BF3F6E9001FD647 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E2EAFA501C03CD9500B746E0 /* CBNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBNetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				3953DFA61C03BCCB0025805F /* CBMicrophoneHandler.swift */,
 				3953DFA81C03C0920025805F /* CBAudioPlayer.swift */,
 				3953DFAA1C03CCE80025805F /* CBAudioBufferDelegate.swift */,
+				E2EAFA501C03CD9500B746E0 /* CBNetworkManager.swift */,
 			);
 			path = ChatterBox;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39E0B9D31BF3F5DA001E91AD /* ViewController.swift in Sources */,
+				E2EAFA511C03CD9500B746E0 /* CBNetworkManager.swift in Sources */,
 				39E0B9D11BF3F5DA001E91AD /* AppDelegate.swift in Sources */,
 				3953DFAB1C03CCE80025805F /* CBAudioBufferDelegate.swift in Sources */,
 				3953DFA91C03C0920025805F /* CBAudioPlayer.swift in Sources */,

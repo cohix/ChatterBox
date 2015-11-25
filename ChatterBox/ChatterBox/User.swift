@@ -15,12 +15,18 @@ class User{
     var password: String
     
     init(){
-        username = "Unknown"
-        password = "Person"
+        self.username = "Unknown"
+        self.password = "Person"
     }
     
     init(uname: String, pword:String){
-        username = uname
-        password = pword
+        self.username = uname
+        self.password = pword
+    }
+    func getName() -> String{
+        return self.username
+    }
+    func getPassword() -> String{
+        return self.password
     }
 }
