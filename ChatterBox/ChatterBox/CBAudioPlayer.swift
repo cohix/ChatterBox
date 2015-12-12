@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 
-class CBAudioPlayer: NSObject, CBMicrophoneHandlerDelegate
+class CBAudioPlayer: NSObject, CBAudioBufferDelegate
 {
     var engine: AVAudioEngine!
     var playerNode: AVAudioPlayerNode!
@@ -25,15 +25,12 @@ class CBAudioPlayer: NSObject, CBMicrophoneHandlerDelegate
     
     func handleBuffer(data: NSData)
     {
-        self.playerNode.scheduleBuffer(self.toPCMBuffer(data), completionHandler: nil)
+        print(data)
+        
+        self.playerNode.scheduleBuffer(self.toPCMBuffer(data), atTime: nil, options: .Loops, completionHandler: nil)
         
         if self.engine.running
         {
-            self.playerNode.play()
-        }
-        else
-        {
-            self.startEngine()
             self.playerNode.play()
         }
     }

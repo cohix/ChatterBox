@@ -9,21 +9,16 @@
 import Foundation
 import AVFoundation
 
-protocol CBMicrophoneHandlerDelegate
-{
-    func handleBuffer(data: NSData)
-}
-
 class CBMicrophoneHandler: NSObject, AVCaptureAudioDataOutputSampleBufferDelegate
 {
-    var delegate: CBMicrophoneHandlerDelegate!
+    var delegate: CBAudioBufferDelegate!
     
     var session: AVCaptureSession!
     var mic: AVCaptureDevice!
     var mic_input: AVCaptureDeviceInput!
     var output: AVCaptureAudioDataOutput!
     
-    init(delegate: CBMicrophoneHandlerDelegate)
+    init(delegate: CBAudioBufferDelegate)
     {
         super.init()
         
@@ -91,7 +86,7 @@ class CBMicrophoneHandler: NSObject, AVCaptureAudioDataOutputSampleBufferDelegat
         
         var status = CMBlockBufferGetDataPointer(block!, 0, nil, &length, &data)    // TODO: check for errors
         
-        let result = NSData(bytes: data, length: length)
+        let result = NSData(bytesNoCopy: data, length: length, freeWhenDone: false)
         
         self.delegate.handleBuffer(result)
     }
