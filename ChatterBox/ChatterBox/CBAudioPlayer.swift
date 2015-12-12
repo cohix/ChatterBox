@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 
-class CBAudioPlayer: NSObject, CBMicrophoneHandlerDelegate
+class CBAudioPlayer: NSObject, CBAudioBufferDelegate
 {
     var engine: AVAudioEngine!
     var playerNode: AVAudioPlayerNode!
@@ -20,19 +20,15 @@ class CBAudioPlayer: NSObject, CBMicrophoneHandlerDelegate
         super.init()
         
         self.setup()
-        self.startEngine()
+        self.start()
     }
     
     func handleBuffer(data: NSData)
     {
-        print(data)
+        let newBuffer = self.toPCMBuffer(data)
+        print(newBuffer)
         
-        self.playerNode.scheduleBuffer(self.toPCMBuffer(data), completionHandler: nil)
-        
-        if self.engine.running
-        {
-            self.playerNode.play()
-        }
+        self.playerNode.scheduleBuffer(newBuffer, completionHandler: nil)
     }
     
     func setup()
@@ -46,7 +42,7 @@ class CBAudioPlayer: NSObject, CBMicrophoneHandlerDelegate
         engine.connect(self.playerNode, to: self.mixer, format: self.mixer.outputFormatForBus(0))
     }
     
-    func startEngine()
+    func start()
     {
         do {
             try self.engine.start()
@@ -54,6 +50,8 @@ class CBAudioPlayer: NSObject, CBMicrophoneHandlerDelegate
         catch {
             print("error couldn't start engine")
         }
+        
+        self.playerNode.play()
     }
     
     func toPCMBuffer(data: NSData) -> AVAudioPCMBuffer
