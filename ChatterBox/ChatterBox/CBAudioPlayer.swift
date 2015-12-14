@@ -63,7 +63,7 @@ class CBAudioPlayer: NSObject, CBAudioBufferDelegate
         
         let channels = UnsafeBufferPointer(start: PCMBuffer.floatChannelData, count: Int(PCMBuffer.format.channelCount))
         
-        data.getBytes(UnsafeMutablePointer<Void>(channels[0]) , length: data.length)
+        data.getBytes(UnsafeMutablePointer<Int8>(channels[0]) , length: data.length)
         
         return PCMBuffer
     }
