@@ -28,7 +28,12 @@ class CBAudioPlayer: NSObject, CBAudioBufferDelegate
         let newBuffer = self.toPCMBuffer(data)
         print(newBuffer)
         
-        self.playerNode.scheduleBuffer(newBuffer, completionHandler: nil)
+        self.playerNode.scheduleBuffer(self.toPCMBuffer(data), atTime: nil, options: .Loops, completionHandler: nil)
+        
+        if self.engine.running
+        {
+            self.playerNode.play()
+        }
     }
     
     func setup()
