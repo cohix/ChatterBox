@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3953DFA71C03BCCB0025805F /* CBMicrophoneHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3953DFA61C03BCCB0025805F /* CBMicrophoneHandler.swift */; };
 		3953DFA91C03C0920025805F /* CBAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3953DFA81C03C0920025805F /* CBAudioPlayer.swift */; };
-		3953DFAB1C03CCE80025805F /* CBAudioBufferDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3953DFAA1C03CCE80025805F /* CBAudioBufferDelegate.swift */; };
+		3953DFAB1C03CCE80025805F /* CBMicDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3953DFAA1C03CCE80025805F /* CBMicDelegate.swift */; };
 		39E0B9D11BF3F5DA001E91AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E0B9D01BF3F5DA001E91AD /* AppDelegate.swift */; };
 		39E0B9D31BF3F5DA001E91AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E0B9D21BF3F5DA001E91AD /* ViewController.swift */; };
 		39E0B9D61BF3F5DA001E91AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E0B9D41BF3F5DA001E91AD /* Main.storyboard */; };
@@ -23,7 +23,7 @@
 /* Begin PBXFileReference section */
 		3953DFA61C03BCCB0025805F /* CBMicrophoneHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBMicrophoneHandler.swift; sourceTree = "<group>"; };
 		3953DFA81C03C0920025805F /* CBAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBAudioPlayer.swift; sourceTree = "<group>"; };
-		3953DFAA1C03CCE80025805F /* CBAudioBufferDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBAudioBufferDelegate.swift; sourceTree = "<group>"; };
+		3953DFAA1C03CCE80025805F /* CBMicDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBMicDelegate.swift; sourceTree = "<group>"; };
 		39E0B9CD1BF3F5DA001E91AD /* ChatterBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatterBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E0B9D01BF3F5DA001E91AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39E0B9D21BF3F5DA001E91AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 				E28E3A5A1BF3F6E9001FD647 /* User.swift */,
 				3953DFA61C03BCCB0025805F /* CBMicrophoneHandler.swift */,
 				3953DFA81C03C0920025805F /* CBAudioPlayer.swift */,
-				3953DFAA1C03CCE80025805F /* CBAudioBufferDelegate.swift */,
+				3953DFAA1C03CCE80025805F /* CBMicDelegate.swift */,
 				E2EAFA501C03CD9500B746E0 /* CBNetworkManager.swift */,
 			);
 			path = ChatterBox;
@@ -132,7 +132,7 @@
 		39E0B9C51BF3F5DA001E91AD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = 3203group;
 				TargetAttributes = {
@@ -228,7 +228,7 @@
 				39E0B9D31BF3F5DA001E91AD /* ViewController.swift in Sources */,
 				E2EAFA511C03CD9500B746E0 /* CBNetworkManager.swift in Sources */,
 				39E0B9D11BF3F5DA001E91AD /* AppDelegate.swift in Sources */,
-				3953DFAB1C03CCE80025805F /* CBAudioBufferDelegate.swift in Sources */,
+				3953DFAB1C03CCE80025805F /* CBMicDelegate.swift in Sources */,
 				3953DFA91C03C0920025805F /* CBAudioPlayer.swift in Sources */,
 				E28E3A5B1BF3F6E9001FD647 /* User.swift in Sources */,
 				3953DFA71C03BCCB0025805F /* CBMicrophoneHandler.swift in Sources */,
@@ -343,10 +343,13 @@
 			baseConfigurationReference = 68744FAC25EEDD19E745CFEA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ChatterBox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.3203Group.ChatterBox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ChatterBox/ChatterBox-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -355,10 +358,12 @@
 			baseConfigurationReference = 6C802F4EF324D21D4ED52ECE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ChatterBox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.3203Group.ChatterBox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ChatterBox/ChatterBox-Bridging-Header.h";
 			};
 			name = Release;
 		};
