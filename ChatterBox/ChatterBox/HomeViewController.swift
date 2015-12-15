@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 
-class homeViewController: UIViewController
+class HomeViewController: UIViewController
 {
     @IBOutlet weak var mytitle: UILabel!
     @IBOutlet weak var greeting: UILabel!
