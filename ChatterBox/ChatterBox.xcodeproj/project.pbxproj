@@ -8,13 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3953DFA71C03BCCB0025805F /* CBMicrophoneHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3953DFA61C03BCCB0025805F /* CBMicrophoneHandler.swift */; };
-		3953DFA91C03C0920025805F /* CBAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3953DFA81C03C0920025805F /* CBAudioPlayer.swift */; };
-		3953DFAB1C03CCE80025805F /* CBMicDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3953DFAA1C03CCE80025805F /* CBMicDelegate.swift */; };
-		39A6312B1C20B8EB00357565 /* Convo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A631261C20B8EB00357565 /* Convo.swift */; };
-		39A6312C1C20B8EB00357565 /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A631271C20B8EB00357565 /* homeViewController.swift */; };
-		39A6312D1C20B8EB00357565 /* MeshCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A631281C20B8EB00357565 /* MeshCallViewController.swift */; };
-		39A6312E1C20B8EB00357565 /* NetworkAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A631291C20B8EB00357565 /* NetworkAccessor.swift */; };
-		39A6312F1C20B8EB00357565 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A6312A1C20B8EB00357565 /* SignupViewController.swift */; };
+		3953DFA91C03C0920025805F /* CBAudioPlayerOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3953DFA81C03C0920025805F /* CBAudioPlayerOperation.swift */; };
+		39A631311C21DD5200357565 /* CBStreamingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A631301C21DD5200357565 /* CBStreamingManager.swift */; };
+		39A631331C21F09300357565 /* CPWriteOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A631321C21F09300357565 /* CPWriteOperation.swift */; };
+		39A631351C21F1DA00357565 /* CBDirectoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A631341C21F1DA00357565 /* CBDirectoryManager.swift */; };
+		39A6313C1C22197900357565 /* CBAudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A6313B1C22197900357565 /* CBAudioManager.swift */; };
 		39E0B9D11BF3F5DA001E91AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E0B9D01BF3F5DA001E91AD /* AppDelegate.swift */; };
 		39E0B9D61BF3F5DA001E91AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E0B9D41BF3F5DA001E91AD /* Main.storyboard */; };
 		39E0B9D81BF3F5DA001E91AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39E0B9D71BF3F5DA001E91AD /* Assets.xcassets */; };
@@ -34,13 +32,11 @@
 
 /* Begin PBXFileReference section */
 		3953DFA61C03BCCB0025805F /* CBMicrophoneHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBMicrophoneHandler.swift; sourceTree = "<group>"; };
-		3953DFA81C03C0920025805F /* CBAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBAudioPlayer.swift; sourceTree = "<group>"; };
-		3953DFAA1C03CCE80025805F /* CBMicDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBMicDelegate.swift; sourceTree = "<group>"; };
-		39A631261C20B8EB00357565 /* Convo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Convo.swift; sourceTree = "<group>"; };
-		39A631271C20B8EB00357565 /* homeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
-		39A631281C20B8EB00357565 /* MeshCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeshCallViewController.swift; sourceTree = "<group>"; };
-		39A631291C20B8EB00357565 /* NetworkAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAccessor.swift; sourceTree = "<group>"; };
-		39A6312A1C20B8EB00357565 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		3953DFA81C03C0920025805F /* CBAudioPlayerOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBAudioPlayerOperation.swift; sourceTree = "<group>"; };
+		39A631301C21DD5200357565 /* CBStreamingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBStreamingManager.swift; sourceTree = "<group>"; };
+		39A631321C21F09300357565 /* CPWriteOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPWriteOperation.swift; sourceTree = "<group>"; };
+		39A631341C21F1DA00357565 /* CBDirectoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBDirectoryManager.swift; sourceTree = "<group>"; };
+		39A6313B1C22197900357565 /* CBAudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBAudioManager.swift; sourceTree = "<group>"; };
 		39E0B9CD1BF3F5DA001E91AD /* ChatterBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatterBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E0B9D01BF3F5DA001E91AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39E0B9D51BF3F5DA001E91AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +70,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39A631361C21F23A00357565 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E2AA24FE1C20C45D00B7C9D4 /* LoginViewController.swift */,
+				E2AA24F81C20C2F700B7C9D4 /* HomeViewController.swift */,
+				E2AA24EE1C20C04000B7C9D4 /* MeshCallViewController.swift */,
+				E2AA24FC1C20C3E200B7C9D4 /* SimpleCallViewController.swift */,
+				E2AA24F01C20C04000B7C9D4 /* SignupViewController.swift */,
+				E2AA24F21C20C04000B7C9D4 /* ViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		39A631371C21F24E00357565 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				3953DFA61C03BCCB0025805F /* CBMicrophoneHandler.swift */,
+				3953DFA81C03C0920025805F /* CBAudioPlayerOperation.swift */,
+				39A6313B1C22197900357565 /* CBAudioManager.swift */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
+		39A631381C21F26700357565 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E2EAFA501C03CD9500B746E0 /* CBNetworkManager.swift */,
+				39A631301C21DD5200357565 /* CBStreamingManager.swift */,
+				E2AA24EF1C20C04000B7C9D4 /* NetworkAccessor.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		39A631391C21F27600357565 /* Filesystem */ = {
+			isa = PBXGroup;
+			children = (
+				39A631321C21F09300357565 /* CPWriteOperation.swift */,
+				39A631341C21F1DA00357565 /* CBDirectoryManager.swift */,
+			);
+			name = Filesystem;
+			sourceTree = "<group>";
+		};
+		39A6313A1C21F28100357565 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E2AA24FA1C20C35F00B7C9D4 /* Convo.swift */,
+				E2AA24F11C20C04000B7C9D4 /* User.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		39E0B9C41BF3F5DA001E91AD = {
 			isa = PBXGroup;
 			children = (
@@ -95,24 +142,16 @@
 		39E0B9CF1BF3F5DA001E91AD /* ChatterBox */ = {
 			isa = PBXGroup;
 			children = (
+				39A6313A1C21F28100357565 /* Models */,
+				39A631361C21F23A00357565 /* View Controllers */,
+				39A631381C21F26700357565 /* Network */,
+				39A631371C21F24E00357565 /* Audio */,
+				39A631391C21F27600357565 /* Filesystem */,
 				39E0B9D01BF3F5DA001E91AD /* AppDelegate.swift */,
 				39E0B9D41BF3F5DA001E91AD /* Main.storyboard */,
 				39E0B9D71BF3F5DA001E91AD /* Assets.xcassets */,
 				39E0B9D91BF3F5DA001E91AD /* LaunchScreen.storyboard */,
 				39E0B9DC1BF3F5DA001E91AD /* Info.plist */,
-				3953DFA61C03BCCB0025805F /* CBMicrophoneHandler.swift */,
-				3953DFA81C03C0920025805F /* CBAudioPlayer.swift */,
-				E2AA24FA1C20C35F00B7C9D4 /* Convo.swift */,
-				3953DFAA1C03CCE80025805F /* CBAudioBufferDelegate.swift */,
-				E2AA24FE1C20C45D00B7C9D4 /* LoginViewController.swift */,
-				E2AA24F81C20C2F700B7C9D4 /* HomeViewController.swift */,
-				E2EAFA501C03CD9500B746E0 /* CBNetworkManager.swift */,
-				E2AA24EE1C20C04000B7C9D4 /* MeshCallViewController.swift */,
-				E2AA24FC1C20C3E200B7C9D4 /* SimpleCallViewController.swift */,
-				E2AA24EF1C20C04000B7C9D4 /* NetworkAccessor.swift */,
-				E2AA24F01C20C04000B7C9D4 /* SignupViewController.swift */,
-				E2AA24F11C20C04000B7C9D4 /* User.swift */,
-				E2AA24F21C20C04000B7C9D4 /* ViewController.swift */,
 			);
 			path = ChatterBox;
 			sourceTree = "<group>";
@@ -256,17 +295,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39A631331C21F09300357565 /* CPWriteOperation.swift in Sources */,
 				E2AA24FF1C20C45D00B7C9D4 /* LoginViewController.swift in Sources */,
 				E2EAFA511C03CD9500B746E0 /* CBNetworkManager.swift in Sources */,
 				E2AA24F51C20C04000B7C9D4 /* SignupViewController.swift in Sources */,
 				39E0B9D11BF3F5DA001E91AD /* AppDelegate.swift in Sources */,
-				3953DFAB1C03CCE80025805F /* CBAudioBufferDelegate.swift in Sources */,
 				E2AA24FD1C20C3E200B7C9D4 /* SimpleCallViewController.swift in Sources */,
-				3953DFA91C03C0920025805F /* CBAudioPlayer.swift in Sources */,
+				3953DFA91C03C0920025805F /* CBAudioPlayerOperation.swift in Sources */,
+				39A631351C21F1DA00357565 /* CBDirectoryManager.swift in Sources */,
 				E2AA24F71C20C04000B7C9D4 /* ViewController.swift in Sources */,
 				3953DFA71C03BCCB0025805F /* CBMicrophoneHandler.swift in Sources */,
 				E2AA24F31C20C04000B7C9D4 /* MeshCallViewController.swift in Sources */,
+				39A631311C21DD5200357565 /* CBStreamingManager.swift in Sources */,
 				E2AA24F91C20C2F700B7C9D4 /* HomeViewController.swift in Sources */,
+				39A6313C1C22197900357565 /* CBAudioManager.swift in Sources */,
 				E2AA24F41C20C04000B7C9D4 /* NetworkAccessor.swift in Sources */,
 				E2AA24F61C20C04000B7C9D4 /* User.swift in Sources */,
 				E2AA24FB1C20C35F00B7C9D4 /* Convo.swift in Sources */,

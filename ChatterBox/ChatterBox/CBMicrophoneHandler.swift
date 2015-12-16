@@ -9,10 +9,12 @@
 import Foundation
 import AVFoundation
 
-class CBMicrophoneHandler: NSObject, CBMicDelegate
+class CBMicrophoneHandler: NSObject
 {
     var audioSession: AVAudioSession!
     var audioRecorder:AVAudioRecorder!
+    
+    private static let singleton: CBMicrophoneHandler = CBMicrophoneHandler()
     
     let recordSettings = [AVSampleRateKey : NSNumber(float: Float(44100.0)),
         AVFormatIDKey : NSNumber(int: Int32(kAudioFormatMPEG4AAC)),
@@ -27,7 +29,7 @@ class CBMicrophoneHandler: NSObject, CBMicDelegate
         
         do {
             try self.audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
-            try self.audioRecorder = AVAudioRecorder(URL: self.directoryURL()!, settings: recordSettings)
+            try self.audioRecorder = AVAudioRecorder(URL: CBDirectoryManager.micWriteURL()!, settings: recordSettings)
             self.audioRecorder.prepareToRecord()
         }
         catch
@@ -36,13 +38,9 @@ class CBMicrophoneHandler: NSObject, CBMicDelegate
         }
     }
     
-    func directoryURL() -> NSURL?
+    static func sharedInstance() -> CBMicrophoneHandler
     {
-        let fileManager = NSFileManager.defaultManager()
-        let urls = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        let documentDirectory = urls[0] as NSURL
-        let soundURL = documentDirectory.URLByAppendingPathComponent("chatterbox.m4a")
-        return soundURL
+        return self.singleton
     }
     
     func doRecordAction()

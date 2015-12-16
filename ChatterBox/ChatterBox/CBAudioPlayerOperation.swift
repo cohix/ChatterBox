@@ -9,23 +9,21 @@
 import Foundation
 import AVFoundation
 
-class CBAudioPlayer: NSObject
+class CBAudioPlayerOperation: NSOperation
 {
     var audioPlayer:AVAudioPlayer!
     
-    var delegate: CBMicDelegate!
+    var url: NSURL!
     
-    init(delegate: CBMicDelegate)
+    init(url: NSURL)
     {
-        super.init()
-        
-        self.delegate = delegate
+        self.url = url
     }
     
-    func doPlayAction()
+    override func main()
     {
         do {
-            try audioPlayer = AVAudioPlayer(contentsOfURL: delegate.directoryURL()!)
+            try self.audioPlayer = AVAudioPlayer(contentsOfURL: self.url)
 
             self.audioPlayer.play()
         }

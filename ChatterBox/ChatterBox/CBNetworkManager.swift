@@ -11,10 +11,9 @@ import AVFoundation
 import Socket_IO_Client_Swift
 import CocoaAsyncSocket
 
-class CBNetworkManager : NSObject{
-    
+class CBNetworkManager : NSObject
+{    
     var messageSocket: SocketIOClient!
-    var streamingSocket: GCDAsyncSocket!
     
     //host user
     var user: User!
@@ -60,13 +59,13 @@ class CBNetworkManager : NSObject{
     }
     
     func createUser(user: User)->Bool{
-      self.socket.emit("&create;<" + user.getName() + ">&endm;<" + user.getPassword() + ";>endm;")
+      self.messageSocket.emit("&create;<" + user.getName() + ">&endm;<" + user.getPassword() + ";>endm;")
         return true
         
     }
     
     func login(user : User)->Bool{
-        self.socket.emit("&create;<" + user.getName() + ">&endm;<" + user.getPassword() + ";>endm;")
+        self.messageSocket.emit("&create;<" + user.getName() + ">&endm;<" + user.getPassword() + ";>endm;")
           return true
     }
     

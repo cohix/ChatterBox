@@ -24,7 +24,7 @@ class ViewController: UIViewController, AVCaptureAudioDataOutputSampleBufferDele
         self.addButton()
         
         self.micHandler = CBMicrophoneHandler()
-        self.audioPlayer = CBAudioPlayer(delegate: self.micHandler)
+        //self.audioPlayer = CBAudioPlayer()
     }
     
     func addButton()
@@ -46,7 +46,7 @@ class ViewController: UIViewController, AVCaptureAudioDataOutputSampleBufferDele
     func releaseButton()
     {
         self.micHandler.doStopAction()
-        self.audioPlayer.doPlayAction()
+        //self.audioPlayer.doPlayAction()
     }
     
     func delay(delay:Double, closure:()->())
