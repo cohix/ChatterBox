@@ -11,12 +11,19 @@
 		3953DFA91C03C0920025805F /* CBAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3953DFA81C03C0920025805F /* CBAudioPlayer.swift */; };
 		3953DFAB1C03CCE80025805F /* CBAudioBufferDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3953DFAA1C03CCE80025805F /* CBAudioBufferDelegate.swift */; };
 		39E0B9D11BF3F5DA001E91AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E0B9D01BF3F5DA001E91AD /* AppDelegate.swift */; };
-		39E0B9D31BF3F5DA001E91AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E0B9D21BF3F5DA001E91AD /* ViewController.swift */; };
 		39E0B9D61BF3F5DA001E91AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E0B9D41BF3F5DA001E91AD /* Main.storyboard */; };
 		39E0B9D81BF3F5DA001E91AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39E0B9D71BF3F5DA001E91AD /* Assets.xcassets */; };
 		39E0B9DB1BF3F5DA001E91AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E0B9D91BF3F5DA001E91AD /* LaunchScreen.storyboard */; };
 		C657F11FED46C77E759D2B8E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A968E9326BCA5F8E869D0561 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		E28E3A5B1BF3F6E9001FD647 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E3A5A1BF3F6E9001FD647 /* User.swift */; };
+		E2AA24F31C20C04000B7C9D4 /* MeshCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA24EE1C20C04000B7C9D4 /* MeshCallViewController.swift */; };
+		E2AA24F41C20C04000B7C9D4 /* NetworkAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA24EF1C20C04000B7C9D4 /* NetworkAccessor.swift */; };
+		E2AA24F51C20C04000B7C9D4 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA24F01C20C04000B7C9D4 /* SignupViewController.swift */; };
+		E2AA24F61C20C04000B7C9D4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA24F11C20C04000B7C9D4 /* User.swift */; };
+		E2AA24F71C20C04000B7C9D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA24F21C20C04000B7C9D4 /* ViewController.swift */; };
+		E2AA24F91C20C2F700B7C9D4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA24F81C20C2F700B7C9D4 /* HomeViewController.swift */; };
+		E2AA24FB1C20C35F00B7C9D4 /* Convo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA24FA1C20C35F00B7C9D4 /* Convo.swift */; };
+		E2AA24FD1C20C3E200B7C9D4 /* SimpleCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA24FC1C20C3E200B7C9D4 /* SimpleCallViewController.swift */; };
+		E2AA24FF1C20C45D00B7C9D4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA24FE1C20C45D00B7C9D4 /* LoginViewController.swift */; };
 		E2EAFA511C03CD9500B746E0 /* CBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EAFA501C03CD9500B746E0 /* CBNetworkManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +33,6 @@
 		3953DFAA1C03CCE80025805F /* CBAudioBufferDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBAudioBufferDelegate.swift; sourceTree = "<group>"; };
 		39E0B9CD1BF3F5DA001E91AD /* ChatterBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatterBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E0B9D01BF3F5DA001E91AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		39E0B9D21BF3F5DA001E91AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		39E0B9D51BF3F5DA001E91AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		39E0B9D71BF3F5DA001E91AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39E0B9DA1BF3F5DA001E91AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -34,7 +40,15 @@
 		68744FAC25EEDD19E745CFEA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6C802F4EF324D21D4ED52ECE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A968E9326BCA5F8E869D0561 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E28E3A5A1BF3F6E9001FD647 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E2AA24EE1C20C04000B7C9D4 /* MeshCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeshCallViewController.swift; sourceTree = "<group>"; };
+		E2AA24EF1C20C04000B7C9D4 /* NetworkAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAccessor.swift; sourceTree = "<group>"; };
+		E2AA24F01C20C04000B7C9D4 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		E2AA24F11C20C04000B7C9D4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E2AA24F21C20C04000B7C9D4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E2AA24F81C20C2F700B7C9D4 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E2AA24FA1C20C35F00B7C9D4 /* Convo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Convo.swift; sourceTree = "<group>"; };
+		E2AA24FC1C20C3E200B7C9D4 /* SimpleCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCallViewController.swift; sourceTree = "<group>"; };
+		E2AA24FE1C20C45D00B7C9D4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E2EAFA501C03CD9500B746E0 /* CBNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBNetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,16 +86,23 @@
 			isa = PBXGroup;
 			children = (
 				39E0B9D01BF3F5DA001E91AD /* AppDelegate.swift */,
-				39E0B9D21BF3F5DA001E91AD /* ViewController.swift */,
 				39E0B9D41BF3F5DA001E91AD /* Main.storyboard */,
 				39E0B9D71BF3F5DA001E91AD /* Assets.xcassets */,
 				39E0B9D91BF3F5DA001E91AD /* LaunchScreen.storyboard */,
 				39E0B9DC1BF3F5DA001E91AD /* Info.plist */,
-				E28E3A5A1BF3F6E9001FD647 /* User.swift */,
 				3953DFA61C03BCCB0025805F /* CBMicrophoneHandler.swift */,
 				3953DFA81C03C0920025805F /* CBAudioPlayer.swift */,
+				E2AA24FA1C20C35F00B7C9D4 /* Convo.swift */,
 				3953DFAA1C03CCE80025805F /* CBAudioBufferDelegate.swift */,
+				E2AA24FE1C20C45D00B7C9D4 /* LoginViewController.swift */,
+				E2AA24F81C20C2F700B7C9D4 /* HomeViewController.swift */,
 				E2EAFA501C03CD9500B746E0 /* CBNetworkManager.swift */,
+				E2AA24EE1C20C04000B7C9D4 /* MeshCallViewController.swift */,
+				E2AA24FC1C20C3E200B7C9D4 /* SimpleCallViewController.swift */,
+				E2AA24EF1C20C04000B7C9D4 /* NetworkAccessor.swift */,
+				E2AA24F01C20C04000B7C9D4 /* SignupViewController.swift */,
+				E2AA24F11C20C04000B7C9D4 /* User.swift */,
+				E2AA24F21C20C04000B7C9D4 /* ViewController.swift */,
 			);
 			path = ChatterBox;
 			sourceTree = "<group>";
@@ -225,13 +246,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39E0B9D31BF3F5DA001E91AD /* ViewController.swift in Sources */,
+				E2AA24FF1C20C45D00B7C9D4 /* LoginViewController.swift in Sources */,
 				E2EAFA511C03CD9500B746E0 /* CBNetworkManager.swift in Sources */,
+				E2AA24F51C20C04000B7C9D4 /* SignupViewController.swift in Sources */,
 				39E0B9D11BF3F5DA001E91AD /* AppDelegate.swift in Sources */,
 				3953DFAB1C03CCE80025805F /* CBAudioBufferDelegate.swift in Sources */,
+				E2AA24FD1C20C3E200B7C9D4 /* SimpleCallViewController.swift in Sources */,
 				3953DFA91C03C0920025805F /* CBAudioPlayer.swift in Sources */,
-				E28E3A5B1BF3F6E9001FD647 /* User.swift in Sources */,
+				E2AA24F71C20C04000B7C9D4 /* ViewController.swift in Sources */,
 				3953DFA71C03BCCB0025805F /* CBMicrophoneHandler.swift in Sources */,
+				E2AA24F31C20C04000B7C9D4 /* MeshCallViewController.swift in Sources */,
+				E2AA24F91C20C2F700B7C9D4 /* HomeViewController.swift in Sources */,
+				E2AA24F41C20C04000B7C9D4 /* NetworkAccessor.swift in Sources */,
+				E2AA24F61C20C04000B7C9D4 /* User.swift in Sources */,
+				E2AA24FB1C20C35F00B7C9D4 /* Convo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
