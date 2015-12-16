@@ -1,10 +1,13 @@
 PODS:
+  - CocoaAsyncSocket (7.4.2)
   - Socket.IO-Client-Swift (4.1.1)
 
 DEPENDENCIES:
+  - CocoaAsyncSocket
   - Socket.IO-Client-Swift
 
 SPEC CHECKSUMS:
+  CocoaAsyncSocket: f5783bdedd232d91b89769bc4b5a1580aed518ad
   Socket.IO-Client-Swift: 2620dbb779edbbd0bc0cac96c053ca7c35aba652
 
 COCOAPODS: 0.38.2

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CBAudioBufferDelegate
+protocol CBMicDelegate
 {
-    func handleBuffer(data: NSData)
+    func directoryURL() -> NSURL?
 }
