@@ -19,12 +19,12 @@ class LoginViewController: UIViewController
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     
-    var network: CBNetworkManager!
+    var network: CBInitialNetworkManager!
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.loginerr.hidden = true
-        self.network = CBNetworkManager()
+        self.network = CBInitialNetworkManager()
         //initialize shared network from singleton class
         //NetworkAccessor.sharednetwork.network = CBNetworkManager()
         

@@ -27,6 +27,7 @@
 		E2AA24FB1C20C35F00B7C9D4 /* Convo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA24FA1C20C35F00B7C9D4 /* Convo.swift */; };
 		E2AA24FF1C20C45D00B7C9D4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA24FE1C20C45D00B7C9D4 /* LoginViewController.swift */; };
 		E2AA25011C223A3600B7C9D4 /* SimpleCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA25001C223A3600B7C9D4 /* SimpleCallViewController.swift */; };
+		E2AA25031C22C23200B7C9D4 /* CBInitialNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA25021C22C23200B7C9D4 /* CBInitialNetworkManager.swift */; };
 		E2EAFA511C03CD9500B746E0 /* CBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EAFA501C03CD9500B746E0 /* CBNetworkManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		E2AA24FA1C20C35F00B7C9D4 /* Convo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Convo.swift; sourceTree = "<group>"; };
 		E2AA24FE1C20C45D00B7C9D4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E2AA25001C223A3600B7C9D4 /* SimpleCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCallViewController.swift; sourceTree = "<group>"; };
+		E2AA25021C22C23200B7C9D4 /* CBInitialNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBInitialNetworkManager.swift; sourceTree = "<group>"; };
 		E2EAFA501C03CD9500B746E0 /* CBNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBNetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 				E2EAFA501C03CD9500B746E0 /* CBNetworkManager.swift */,
 				39A631301C21DD5200357565 /* CBStreamingManager.swift */,
 				39A6313E1C223E2200357565 /* CBConnectionSocket.swift */,
+				E2AA25021C22C23200B7C9D4 /* CBInitialNetworkManager.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			files = (
 				39A631331C21F09300357565 /* CPWriteOperation.swift in Sources */,
 				E2AA24FF1C20C45D00B7C9D4 /* LoginViewController.swift in Sources */,
+				E2AA25031C22C23200B7C9D4 /* CBInitialNetworkManager.swift in Sources */,
 				E2EAFA511C03CD9500B746E0 /* CBNetworkManager.swift in Sources */,
 				E2AA24F51C20C04000B7C9D4 /* SignupViewController.swift in Sources */,
 				39E0B9D11BF3F5DA001E91AD /* AppDelegate.swift in Sources */,
