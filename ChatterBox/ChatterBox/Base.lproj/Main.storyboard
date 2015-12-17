@@ -49,12 +49,6 @@
                                 <color key="textColor" red="0.51434876689999998" green="0.74857954550000005" blue="0.50419656430000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="center" minimumFontSize="17" id="gMH-to-Zsr">
-                                <rect key="frame" x="113" y="158" width="149" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" id="stn-Sr-vnW">
                                 <rect key="frame" x="113" y="219" width="149" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -110,6 +104,12 @@
                                 <color key="textColor" red="1" green="0.058359298230000002" blue="0.078425480719999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="center" minimumFontSize="17" id="gMH-to-Zsr">
+                                <rect key="frame" x="113" y="158" width="149" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -266,6 +266,7 @@
                         <outlet property="greeting" destination="3ne-DU-0sZ" id="N3c-9d-fNq"/>
                         <outlet property="meshcall" destination="qk2-wF-sSa" id="Dqg-yh-3pb"/>
                         <outlet property="mytitle" destination="zIa-sS-m6k" id="7C5-SK-seC"/>
+                        <segue destination="aUk-rw-NMx" kind="modal" identifier="simpleCallFromHome" id="bZy-hN-Pt9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFb-d2-DKf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -361,6 +362,7 @@
         <!--simple call-->
         <scene sceneID="P4p-mY-QZo">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ojL-97-hTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="aUk-rw-NMx" userLabel="simple call" customClass="SimpleCallViewController" customModule="ChatterBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rrQ-yt-78j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -384,7 +386,7 @@
                                     <color key="titleColor" red="0.40705886990000001" green="0.40705886990000001" blue="0.40705886990000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="KpY-La-PBa" kind="modal" id="6Ja-Vc-H7p"/>
+                                    <segue destination="KpY-La-PBa" kind="modal" identifier="" id="6Ja-Vc-H7p"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ChatterBox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uFP-Dr-8m5" userLabel="title">
@@ -394,19 +396,6 @@
                                 <color key="textColor" red="0.51434876689999998" green="0.74857954550000005" blue="0.50419656430000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="tc9-u7-3hS" userLabel="Users">
-                                <rect key="frame" x="67" y="182" width="240" height="288"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Online Users" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="93v-vK-AsX" userLabel="Users Online">
-                                    <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.51434876689999998" green="0.74857954550000005" blue="0.50419656430000004" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="a9D-lP-GLv">
                                 <rect key="frame" x="306" y="617" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -414,6 +403,33 @@
                                     <color key="titleColor" red="0.40705886990000001" green="0.40705886990000001" blue="0.40705886990000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hello superlong, please select an option bellow:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9NJ-Nn-4cd" userLabel="greeting">
+                                <rect key="frame" x="7" y="164" width="361" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.40705886990000001" green="0.40705886990000001" blue="0.40705886990000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AYa-Bi-wrg" userLabel="call">
+                                <rect key="frame" x="124" y="269" width="127" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Call Someone">
+                                    <color key="titleColor" red="0.40705886990000001" green="0.40705886990000001" blue="0.40705886990000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Sqq-gs-mvC" userLabel="record">
+                                <rect key="frame" x="124" y="331" width="127" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Record">
+                                    <color key="titleColor" red="0.40705886990000001" green="0.40705886990000001" blue="0.40705886990000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="IP address" textAlignment="center" minimumFontSize="17" id="hdD-24-wz0">
+                                <rect key="frame" x="113" y="221" width="149" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -421,16 +437,16 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="back" destination="hQy-W5-ibN" id="dPU-Xq-FWK"/>
-                        <outlet property="chatrooms" destination="tc9-u7-3hS" id="Nzq-tm-sqo"/>
+                        <outlet property="call" destination="AYa-Bi-wrg" id="537-9J-AHQ"/>
+                        <outlet property="greeting" destination="9NJ-Nn-4cd" id="yIB-PQ-53o"/>
+                        <outlet property="ipaddr" destination="hdD-24-wz0" id="IVK-7z-w01"/>
                         <outlet property="logout" destination="5dl-OL-ZBK" id="l2Z-r3-2xm"/>
+                        <outlet property="record" destination="Sqq-gs-mvC" id="Tk1-Ga-8tw"/>
                         <outlet property="refresh" destination="a9D-lP-GLv" id="0Ae-Xf-xtE"/>
-                        <outlet property="userTable" destination="tc9-u7-3hS" id="Uc5-i7-ucF"/>
-                        <outlet property="users" destination="tc9-u7-3hS" id="cI7-by-i3M"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ojL-97-hTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1888.5" y="-489.5"/>
+            <point key="canvasLocation" x="1944.5" y="-409.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dnk-fa-k3B">
@@ -454,7 +470,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="lQr-fY-xJ6"/>
         <segue reference="6Ja-Vc-H7p"/>
-        <segue reference="XPB-pb-xvF"/>
     </inferredMetricsTieBreakers>
 </document>

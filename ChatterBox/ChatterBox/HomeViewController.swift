@@ -23,7 +23,7 @@ class HomeViewController: UIViewController
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.greeting.text = "Hello " + CBStreamingManager.sharedInstance().getWiFiAddress()! + ", please select an option bellow."
+        self.greeting.text = "Hello " + CBNetworkManager.sharedInstance().getUserName() + ", please select an option bellow."
         self.call.backgroundColor = UIColor.clearColor()
         self.call.layer.cornerRadius = 5
         self.call.layer.borderWidth = 1
@@ -54,7 +54,7 @@ class HomeViewController: UIViewController
         print("Got here")
         dispatch_async(dispatch_get_main_queue(), {()
         in
-            self.presentViewController(ViewController(), animated: true, completion: nil)
+            self.performSegueWithIdentifier("simpleCallFromHome", sender: self)
         })
     }
     
