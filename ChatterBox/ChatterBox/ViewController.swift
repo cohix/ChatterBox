@@ -12,7 +12,7 @@ import AVFoundation
 class ViewController: UIViewController, AVCaptureAudioDataOutputSampleBufferDelegate
 {
     var micHandler: CBMicrophoneHandler!
-    var audioPlayer: CBAudioPlayer!
+    var audioPlayer: CBAudioPlayerOperation!
     
     var micButton: UIButton!
     

@@ -19,6 +19,7 @@ class SignupViewController: UIViewController
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var password2: UITextField!
     @IBOutlet weak var signuperr: UILabel!
+    @IBOutlet weak var signuperror2: UILabel!
     
     //var network: CBNetworkManager!
     
@@ -28,19 +29,25 @@ class SignupViewController: UIViewController
         // Do any additional setup after loading the view, typically from a nib.
         self.passerr.hidden = true
         self.signuperr.hidden = true
+        self.signuperror2.hidden = true
     }
     
     @IBAction func signup(sender: UIButton) {
         //if(self.password = "" && self.password2!="")
         if(self.password.text == self.password2.text){
             self.passerr.hidden = true
-            if (NetworkAccessor.sharednetwork.network.signup(self.username.text!, passwd: self.password.text!)){
-                performSegueWithIdentifier("signup", sender: self)
-                self.passerr.hidden = true
-            }else{
-                self.passerr.hidden=false
+            if(self.password.text?.characters.count > 3){
+                self.signuperror2.hidden = true
+                if (NetworkAccessor.sharednetwork.network.signup(self.username.text!, passwd: self.password.text!)){
+                    performSegueWithIdentifier("signup", sender: self)
+                    self.passerr.hidden = true
+                }else{
+                    self.passerr.hidden=false
+                }
             }
-            
+            else{
+                self.signuperror2.hidden = false
+            }
         }
         else{
             self.passerr.hidden = false

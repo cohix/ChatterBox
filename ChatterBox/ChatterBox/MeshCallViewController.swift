@@ -12,7 +12,7 @@ import AVFoundation
 class MeshCallViewController: UIViewController
 {
     var micHandler: CBMicrophoneHandler!
-    var audioPlayer: CBAudioPlayer!
+    var audioPlayer: CBAudioPlayerOperation!
     
     @IBOutlet weak var logout: UIButton!
     
