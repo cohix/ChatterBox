@@ -14,6 +14,8 @@ class SimpleCallViewController: UIViewController
     var micHandler: CBMicrophoneHandler!
     var audioPlayer: CBAudioPlayerOperation!
     
+    var people: [Person] = [Person]()
+    
     @IBOutlet weak var refresh: UIButton!
     @IBOutlet weak var back: UIButton!
     @IBOutlet weak var userTable: UITableView!
@@ -24,7 +26,9 @@ class SimpleCallViewController: UIViewController
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        //CBNetworkManager.sharedInstance().getAvailableUsers()
+        CBNetworkManager.sharedInstance().getAvailableUsers()
+        
+        CBNetworkManager.sharedInstance().viewControllerDelegate = self
     }
     
     @IBAction func logout(sender: AnyObject) {
@@ -39,6 +43,11 @@ class SimpleCallViewController: UIViewController
     }
     func setUsers(){
         
+    }
+    
+    func addPerson(newPerson: Person)
+    {
+        self.people.append(newPerson)
     }
     
 }

@@ -83,6 +83,21 @@ class CBNetworkManager : NSObject , GCDAsyncSocketDelegate
                 self.viewControllerDelegate.performSelector(Selector("homeFromLogin"))
             }
         }
+        if((json["getpeople"].arrayValue.count > 0)){
+            for person in json["getpeople"].arrayValue
+            {
+                let username = person["name"].stringValue
+                let ip = person["ip"].stringValue
+                
+                let newPerson = Person(username: username, ip: ip)
+                
+                if(self.viewControllerDelegate != nil && self.viewControllerDelegate.respondsToSelector(Selector("addPerson")))
+                {
+                    self.viewControllerDelegate.performSelector(Selector("addPerson"), withObject: newPerson)
+                }
+            }
+        }
+        
     }
     
     func socket(sock: GCDAsyncSocket!, didConnectToHost host: String!, port: UInt16)
@@ -115,7 +130,8 @@ class CBNetworkManager : NSObject , GCDAsyncSocketDelegate
         
     }
     func signup(name: String, passwd: String){
-        let jsonString = "{\"command\": \"signup\", \"name\": \"\(name)\", \"password\": \"\(passwd)\"}"
+        let ip = CBStreamingManager.sharedInstance().getWiFiAddress()!
+        let jsonString = "{\"command\": \"signup\", \"name\": \"\(name)\", \"password\": \"\(passwd)\", \"ip\": \"\(ip)\"}"
         print(jsonString)
         
         let temp = NSMutableData()
@@ -131,7 +147,8 @@ class CBNetworkManager : NSObject , GCDAsyncSocketDelegate
         user = User(uname: name,pword: passwd)
     }
     func login(name: String, passwd: String){
-        let jsonString = "{\"command\": \"login\", \"name\": \"\(name)\", \"password\": \"\(passwd)\"}"
+        let ip = CBStreamingManager.sharedInstance().getWiFiAddress()!
+        let jsonString = "{\"command\": \"login\", \"name\": \"\(name)\", \"password\": \"\(passwd)\", \"ip\": \"\(ip)\"}"
         print(jsonString)
         
         let temp = NSMutableData()
