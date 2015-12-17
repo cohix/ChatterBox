@@ -13,6 +13,11 @@ class CBAudioManager: NSObject
     private var playQueue: NSOperationQueue!
     private static let singleton: CBAudioManager = CBAudioManager()
     
+    override init()
+    {
+        self.playQueue = NSOperationQueue()
+    }
+    
     static func sharedInstance() -> CBAudioManager
     {
         return singleton

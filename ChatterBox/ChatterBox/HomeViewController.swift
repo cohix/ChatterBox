@@ -19,17 +19,16 @@ class HomeViewController: UIViewController
     @IBOutlet weak var logout: UIButton!
     @IBOutlet weak var back: UIButton!
     
-    //var network: CBNetworkManager!
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.greeting.text = "Hello " + NetworkAccessor.sharednetwork.network.getUserName() + ", please select an option bellow."
+        self.greeting.text = "Hello " + CBStreamingManager.sharedInstance().getWiFiAddress()! + ", please select an option bellow."
         self.call.backgroundColor = UIColor.clearColor()
         self.call.layer.cornerRadius = 5
         self.call.layer.borderWidth = 1
         self.call.layer.borderColor = UIColor.blackColor().CGColor
+        self.call.addTarget(self, action: Selector("callSomeone"), forControlEvents: .TouchUpInside)
         
         self.meshcall.backgroundColor = UIColor.clearColor()
         self.meshcall.layer.cornerRadius = 5
@@ -41,7 +40,7 @@ class HomeViewController: UIViewController
     }
     
     @IBAction func logout(sender: AnyObject) {
-        NetworkAccessor.sharednetwork.network.user = nil
+        CBNetworkManager.sharedInstance().user = nil
     }
     
     override func didReceiveMemoryWarning()

@@ -13,13 +13,13 @@
 		39A631331C21F09300357565 /* CPWriteOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A631321C21F09300357565 /* CPWriteOperation.swift */; };
 		39A631351C21F1DA00357565 /* CBDirectoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A631341C21F1DA00357565 /* CBDirectoryManager.swift */; };
 		39A6313C1C22197900357565 /* CBAudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A6313B1C22197900357565 /* CBAudioManager.swift */; };
+		39A6313F1C223E2200357565 /* CBConnectionSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A6313E1C223E2200357565 /* CBConnectionSocket.swift */; };
 		39E0B9D11BF3F5DA001E91AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E0B9D01BF3F5DA001E91AD /* AppDelegate.swift */; };
 		39E0B9D61BF3F5DA001E91AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E0B9D41BF3F5DA001E91AD /* Main.storyboard */; };
 		39E0B9D81BF3F5DA001E91AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39E0B9D71BF3F5DA001E91AD /* Assets.xcassets */; };
 		39E0B9DB1BF3F5DA001E91AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E0B9D91BF3F5DA001E91AD /* LaunchScreen.storyboard */; };
 		C657F11FED46C77E759D2B8E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A968E9326BCA5F8E869D0561 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E2AA24F31C20C04000B7C9D4 /* MeshCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA24EE1C20C04000B7C9D4 /* MeshCallViewController.swift */; };
-		E2AA24F41C20C04000B7C9D4 /* NetworkAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA24EF1C20C04000B7C9D4 /* NetworkAccessor.swift */; };
 		E2AA24F51C20C04000B7C9D4 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA24F01C20C04000B7C9D4 /* SignupViewController.swift */; };
 		E2AA24F61C20C04000B7C9D4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA24F11C20C04000B7C9D4 /* User.swift */; };
 		E2AA24F71C20C04000B7C9D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA24F21C20C04000B7C9D4 /* ViewController.swift */; };
@@ -37,6 +37,8 @@
 		39A631321C21F09300357565 /* CPWriteOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPWriteOperation.swift; sourceTree = "<group>"; };
 		39A631341C21F1DA00357565 /* CBDirectoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBDirectoryManager.swift; sourceTree = "<group>"; };
 		39A6313B1C22197900357565 /* CBAudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBAudioManager.swift; sourceTree = "<group>"; };
+		39A6313D1C223AE600357565 /* ChatterBox-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChatterBox-Bridging-Header.h"; sourceTree = "<group>"; };
+		39A6313E1C223E2200357565 /* CBConnectionSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBConnectionSocket.swift; sourceTree = "<group>"; };
 		39E0B9CD1BF3F5DA001E91AD /* ChatterBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatterBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E0B9D01BF3F5DA001E91AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39E0B9D51BF3F5DA001E91AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,7 +49,6 @@
 		6C802F4EF324D21D4ED52ECE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A968E9326BCA5F8E869D0561 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2AA24EE1C20C04000B7C9D4 /* MeshCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeshCallViewController.swift; sourceTree = "<group>"; };
-		E2AA24EF1C20C04000B7C9D4 /* NetworkAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAccessor.swift; sourceTree = "<group>"; };
 		E2AA24F01C20C04000B7C9D4 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		E2AA24F11C20C04000B7C9D4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E2AA24F21C20C04000B7C9D4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +99,7 @@
 			children = (
 				E2EAFA501C03CD9500B746E0 /* CBNetworkManager.swift */,
 				39A631301C21DD5200357565 /* CBStreamingManager.swift */,
-				E2AA24EF1C20C04000B7C9D4 /* NetworkAccessor.swift */,
+				39A6313E1C223E2200357565 /* CBConnectionSocket.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -152,6 +153,7 @@
 				39E0B9D71BF3F5DA001E91AD /* Assets.xcassets */,
 				39E0B9D91BF3F5DA001E91AD /* LaunchScreen.storyboard */,
 				39E0B9DC1BF3F5DA001E91AD /* Info.plist */,
+				39A6313D1C223AE600357565 /* ChatterBox-Bridging-Header.h */,
 			);
 			path = ChatterBox;
 			sourceTree = "<group>";
@@ -309,9 +311,9 @@
 				39A631311C21DD5200357565 /* CBStreamingManager.swift in Sources */,
 				E2AA24F91C20C2F700B7C9D4 /* HomeViewController.swift in Sources */,
 				39A6313C1C22197900357565 /* CBAudioManager.swift in Sources */,
-				E2AA24F41C20C04000B7C9D4 /* NetworkAccessor.swift in Sources */,
 				E2AA24F61C20C04000B7C9D4 /* User.swift in Sources */,
 				E2AA24FB1C20C35F00B7C9D4 /* Convo.swift in Sources */,
+				39A6313F1C223E2200357565 /* CBConnectionSocket.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -68,5 +68,7 @@ class CBMicrophoneHandler: NSObject
         {
             print("Error 3")
         }
+        
+        CBStreamingManager.sharedInstance().writeMicAudioToAllSockets()
     }
 }
