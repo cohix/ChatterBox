@@ -335,6 +335,9 @@
                                     <color key="textColor" red="0.40705886990000001" green="0.40705886990000001" blue="0.40705886990000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="newCall:" destination="xfQ-dY-HTe" eventType="editingDidEnd" id="Of7-vk-jO3"/>
+                                    </connections>
                                 </textField>
                                 <sections/>
                             </tableView>

@@ -15,17 +15,22 @@ class MeshCallViewController: UIViewController
     var audioPlayer: CBAudioPlayerOperation!
     
     @IBOutlet weak var logout: UIButton!
+    @IBOutlet weak var new: UITextField!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
         //self.audioPlayer = CBAudioPlayer()
         self.micHandler = CBMicrophoneHandler()
         self.start()
         
     }
     
+    @IBAction func newCall(sender: AnyObject) {
+        
+    }
     @IBAction func logout(sender: AnyObject) {
         NetworkAccessor.sharednetwork.network.user = nil
     }
