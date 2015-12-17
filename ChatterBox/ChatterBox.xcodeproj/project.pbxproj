@@ -18,7 +18,7 @@
 		39E0B9D61BF3F5DA001E91AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E0B9D41BF3F5DA001E91AD /* Main.storyboard */; };
 		39E0B9D81BF3F5DA001E91AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39E0B9D71BF3F5DA001E91AD /* Assets.xcassets */; };
 		39E0B9DB1BF3F5DA001E91AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39E0B9D91BF3F5DA001E91AD /* LaunchScreen.storyboard */; };
-		C657F11FED46C77E759D2B8E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A968E9326BCA5F8E869D0561 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C657F11FED46C77E759D2B8E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A968E9326BCA5F8E869D0561 /* Pods.framework */; };
 		E2AA24F31C20C04000B7C9D4 /* MeshCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA24EE1C20C04000B7C9D4 /* MeshCallViewController.swift */; };
 		E2AA24F51C20C04000B7C9D4 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA24F01C20C04000B7C9D4 /* SignupViewController.swift */; };
 		E2AA24F61C20C04000B7C9D4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA24F11C20C04000B7C9D4 /* User.swift */; };

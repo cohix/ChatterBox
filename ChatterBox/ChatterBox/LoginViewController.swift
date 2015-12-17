@@ -24,6 +24,7 @@ class LoginViewController: UIViewController
     {
         super.viewDidLoad()
         self.loginerr.hidden = true
+        self.network = CBNetworkManager()
         //initialize shared network from singleton class
         //NetworkAccessor.sharednetwork.network = CBNetworkManager()
         
@@ -32,15 +33,14 @@ class LoginViewController: UIViewController
     }
     
     @IBAction func login(sender: UIButton) {
-//        if(NetworkAccessor.sharednetwork.network.login(self.username.text!, passwd: self.password.text!)){
-//            self.loginerr.hidden=true
-//            performSegueWithIdentifier("login", sender: self)
-//        }else{
-//            self.loginerr.hidden = false
-//        }
-        //print(ok)
+        if(CBNetworkManager.sharedInstance().login(self.username.text!, passwd: self.password.text!)){
+            self.loginerr.hidden=true
+            performSegueWithIdentifier("login", sender: self)
+        }else{
+            self.loginerr.hidden = false
+        }
         
-        self.presentViewController(ViewController(), animated: true, completion: nil)
+       // self.presentViewController(ViewController(), animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning()

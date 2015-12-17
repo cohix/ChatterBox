@@ -27,7 +27,7 @@ class SimpleCallViewController: UIViewController
     }
     
     @IBAction func logout(sender: AnyObject) {
-        NetworkAccessor.sharednetwork.network.user = nil
+        CBNetworkManager.sharedInstance().user = nil
     }
     
     func start()

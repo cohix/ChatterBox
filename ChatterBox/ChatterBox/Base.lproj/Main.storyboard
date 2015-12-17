@@ -117,12 +117,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="passerr" destination="rjg-aZ-DCZ" id="MPd-Nj-x5m"/>
-                        <outlet property="password" destination="stn-Sr-vnW" id="VjT-ie-ExM"/>
-                        <outlet property="password2" destination="9T2-i2-i2s" id="ffL-W3-aO6"/>
+                        <outlet property="password" destination="stn-Sr-vnW" id="Hl0-75-aTc"/>
+                        <outlet property="password2" destination="9T2-i2-i2s" id="aRa-ek-cKr"/>
                         <outlet property="signup" destination="fHC-AJ-Exd" id="a5p-9E-Xww"/>
                         <outlet property="signuperr" destination="7UL-Ug-Rbm" id="lQC-is-sWL"/>
                         <outlet property="signuperror2" destination="2Rw-rw-UwJ" id="QoF-uf-5a6"/>
-                        <outlet property="username" destination="gMH-to-Zsr" id="I5p-eW-xzs"/>
+                        <outlet property="username" destination="gMH-to-Zsr" id="yDd-AC-i03"/>
                         <segue destination="KpY-La-PBa" kind="modal" identifier="signup" id="Yoi-I5-GWM"/>
                     </connections>
                 </viewController>

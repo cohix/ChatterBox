@@ -25,7 +25,7 @@ class CBAudioPlayerOperation: NSOperation
     {
         do {
             try self.audioPlayer = AVAudioPlayer(contentsOfURL: self.url, fileTypeHint: AVFileTypeAppleM4A)
-
+            
             self.audioPlayer.play()
         }
         catch let err as NSError
