@@ -12,7 +12,6 @@ import AVFoundation
 class MeshCallViewController: UIViewController
 {
     var micHandler: CBMicrophoneHandler!
-    var audioPlayer: CBAudioPlayerOperation!
     
     @IBOutlet weak var logout: UIButton!
     @IBOutlet weak var new: UITextField!
@@ -32,7 +31,7 @@ class MeshCallViewController: UIViewController
         
     }
     @IBAction func logout(sender: AnyObject) {
-        NetworkAccessor.sharednetwork.network.user = nil
+        //NetworkAccessor.sharednetwork.network.user = nil
     }
    
     func start()

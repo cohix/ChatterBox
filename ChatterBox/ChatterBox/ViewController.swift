@@ -12,22 +12,59 @@ import AVFoundation
 class ViewController: UIViewController, AVCaptureAudioDataOutputSampleBufferDelegate
 {
     var micHandler: CBMicrophoneHandler!
-    var audioPlayer: CBAudioPlayerOperation!
+    var connectionSocket: CBConnectionSocket!
     
     var micButton: UIButton!
+    var hostField: UITextField!
+    var callButton: UIButton!
+    var youLabel: UILabel!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.addButton()
+        self.view.backgroundColor = UIColor.whiteColor()
+        
+        self.addRecordButton()
+        self.addHostField()
+        self.addCallButton()
+        self.addYouLabel()
         
         self.micHandler = CBMicrophoneHandler()
-        //self.audioPlayer = CBAudioPlayer()
+        
+        self.connectionSocket = CBConnectionSocket()
+        self.connectionSocket.start()
     }
     
-    func addButton()
+    func addHostField()
+    {
+        self.hostField = UITextField(frame: CGRect(x: 20, y: 200, width: self.view.frame.width - 40, height: 60))
+        self.hostField.placeholder = "Call an IP address"
+        
+        self.view.addSubview(self.hostField)
+    }
+    
+    func addYouLabel()
+    {
+        self.youLabel = UILabel(frame: CGRect(x: 20, y: 50, width: self.view.frame.width - 40, height: 60))
+        self.youLabel.text = "Your IP address is: \(CBStreamingManager.sharedInstance().getWiFiAddress()!)"
+        self.youLabel.font = UIFont.systemFontOfSize(16)
+        
+        self.view.addSubview(self.youLabel)
+    }
+    
+    func addCallButton()
+    {
+        self.micButton = UIButton(frame: CGRect(x: 20, y: 300, width: self.view.frame.width - 40, height: 60))
+        self.micButton.setTitle("Call", forState: .Normal)
+        self.micButton.setTitleColor(UIColor.blueColor(), forState: .Normal)
+        self.micButton.addTarget(self, action: Selector("callUser"), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        self.view.addSubview(self.micButton)
+    }
+    
+    func addRecordButton()
     {
         self.micButton = UIButton(frame: CGRect(x: 20, y: self.view.frame.height - 100, width: self.view.frame.width - 40, height: 60))
         self.micButton.setTitle("Record", forState: .Normal)
@@ -46,7 +83,15 @@ class ViewController: UIViewController, AVCaptureAudioDataOutputSampleBufferDele
     func releaseButton()
     {
         self.micHandler.doStopAction()
-        //self.audioPlayer.doPlayAction()
+    }
+    
+    func callUser()
+    {
+        self.view.endEditing(true)
+        
+        let ip = self.hostField.text
+        
+        CBStreamingManager.sharedInstance().newConnection(ip!, port: 8080)
     }
     
     func delay(delay:Double, closure:()->())

@@ -25,20 +25,22 @@ class LoginViewController: UIViewController
         super.viewDidLoad()
         self.loginerr.hidden = true
         //initialize shared network from singleton class
-        NetworkAccessor.sharednetwork.network = CBNetworkManager()
+        //NetworkAccessor.sharednetwork.network = CBNetworkManager()
         
         // Do any additional setup after loading the view, typically from a nib.
         
     }
     
     @IBAction func login(sender: UIButton) {
-        if(NetworkAccessor.sharednetwork.network.login(self.username.text!, passwd: self.password.text!)){
-            self.loginerr.hidden=true
-            performSegueWithIdentifier("login", sender: self)
-        }else{
-            self.loginerr.hidden = false
-        }
+//        if(NetworkAccessor.sharednetwork.network.login(self.username.text!, passwd: self.password.text!)){
+//            self.loginerr.hidden=true
+//            performSegueWithIdentifier("login", sender: self)
+//        }else{
+//            self.loginerr.hidden = false
+//        }
         //print(ok)
+        
+        self.presentViewController(ViewController(), animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning()

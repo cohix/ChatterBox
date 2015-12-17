@@ -18,18 +18,20 @@ class CBAudioPlayerOperation: NSOperation
     init(url: NSURL)
     {
         self.url = url
+        print(self.url)
     }
     
     override func main()
     {
         do {
-            try self.audioPlayer = AVAudioPlayer(contentsOfURL: self.url)
+            try self.audioPlayer = AVAudioPlayer(contentsOfURL: self.url, fileTypeHint: AVFileTypeAppleM4A)
 
             self.audioPlayer.play()
         }
-        catch
+        catch let err as NSError
         {
             print("Error 4")
+            print(err.localizedDescription)
         }
     }
 }

@@ -36,18 +36,13 @@ class SignupViewController: UIViewController
         //if(self.password = "" && self.password2!="")
         if(self.password.text == self.password2.text){
             self.passerr.hidden = true
-            if(self.password.text?.characters.count > 3){
-                self.signuperror2.hidden = true
-                if (NetworkAccessor.sharednetwork.network.signup(self.username.text!, passwd: self.password.text!)){
-                    performSegueWithIdentifier("signup", sender: self)
-                    self.passerr.hidden = true
-                }else{
-                    self.passerr.hidden=false
-                }
-            }
-            else{
-                self.signuperror2.hidden = false
-            }
+//            if (NetworkAccessor.sharednetwork.network.signup(self.username.text!, passwd: self.password.text!)){
+//                performSegueWithIdentifier("signup", sender: self)
+//                self.passerr.hidden = true
+//            }else{
+//                self.passerr.hidden=false
+//            }
+            
         }
         else{
             self.passerr.hidden = false

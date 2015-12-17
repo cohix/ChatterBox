@@ -15,6 +15,8 @@ class CBNetworkManager : NSObject
 {    
     var messageSocket: SocketIOClient!
     
+    static let singleton: CBNetworkManager = CBNetworkManager()
+    
     //host user
     var user: User!
     
@@ -23,6 +25,11 @@ class CBNetworkManager : NSObject
         self.setup()
         self.addHandlers()
         self.messageSocket.connect()
+    }
+    
+    static func sharedInstance() -> CBNetworkManager
+    {
+        return singleton
     }
     
     func login(name: String, passwd: String)->Bool{
