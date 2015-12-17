@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="eQu-cb-3hY">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--Home-->
@@ -101,6 +101,13 @@
                                 <color key="textColor" red="1" green="0.058359298233000789" blue="0.078425480720202279" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="password must be at least 4 characters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2Rw-rw-UwJ" userLabel="passerr2">
+                                <rect key="frame" x="76" y="196" width="223" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.058359298230000002" blue="0.078425480719999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -111,6 +118,7 @@
                         <outlet property="password2" destination="9T2-i2-i2s" id="ffL-W3-aO6"/>
                         <outlet property="signup" destination="fHC-AJ-Exd" id="a5p-9E-Xww"/>
                         <outlet property="signuperr" destination="7UL-Ug-Rbm" id="lQC-is-sWL"/>
+                        <outlet property="signuperror2" destination="2Rw-rw-UwJ" id="QoF-uf-5a6"/>
                         <outlet property="username" destination="gMH-to-Zsr" id="I5p-eW-xzs"/>
                         <segue destination="KpY-La-PBa" kind="modal" identifier="signup" id="Yoi-I5-GWM"/>
                     </connections>
@@ -441,7 +449,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VqJ-aH-1LB"/>
-        <segue reference="lQr-fY-xJ6"/>
+        <segue reference="Yoi-I5-GWM"/>
+        <segue reference="rCK-3j-xd7"/>
     </inferredMetricsTieBreakers>
 </document>

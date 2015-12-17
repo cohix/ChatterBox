@@ -19,6 +19,7 @@ class SignupViewController: UIViewController
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var password2: UITextField!
     @IBOutlet weak var signuperr: UILabel!
+    @IBOutlet weak var signuperror2: UILabel!
     
     //var network: CBNetworkManager!
     
@@ -28,6 +29,7 @@ class SignupViewController: UIViewController
         // Do any additional setup after loading the view, typically from a nib.
         self.passerr.hidden = true
         self.signuperr.hidden = true
+        self.signuperror2.hidden = true
     }
     
     @IBAction func signup(sender: UIButton) {
