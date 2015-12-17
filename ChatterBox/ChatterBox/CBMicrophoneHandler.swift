@@ -9,85 +9,64 @@
 import Foundation
 import AVFoundation
 
-class CBMicrophoneHandler: NSObject, AVCaptureAudioDataOutputSampleBufferDelegate
+class CBMicrophoneHandler: NSObject
 {
-    var delegate: CBAudioBufferDelegate!
+    var audioSession: AVAudioSession!
+    var audioRecorder:AVAudioRecorder!
     
-    var session: AVCaptureSession!
-    var mic: AVCaptureDevice!
-    var mic_input: AVCaptureDeviceInput!
-    var output: AVCaptureAudioDataOutput!
+    private static let singleton: CBMicrophoneHandler = CBMicrophoneHandler()
     
-    init(delegate: CBAudioBufferDelegate)
+    let recordSettings = [AVSampleRateKey : NSNumber(float: Float(44100.0)),
+        AVFormatIDKey : NSNumber(int: Int32(kAudioFormatMPEG4AAC)),
+        AVNumberOfChannelsKey : NSNumber(int: 1),
+        AVEncoderAudioQualityKey : NSNumber(int: Int32(AVAudioQuality.High.rawValue))]
+    
+    override init()
     {
         super.init()
         
-        self.delegate = delegate
+        self.audioSession = AVAudioSession.sharedInstance()
         
-        self.session = AVCaptureSession()
-        self.session.sessionPreset = AVCaptureSessionPresetMedium
-        
-        self.mic = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeAudio)
-        
-        self.output = AVCaptureAudioDataOutput()
-        self.output.setSampleBufferDelegate(self, queue: dispatch_get_main_queue())
-        
-        do
-        {
-            self.mic_input = try AVCaptureDeviceInput(device: mic)
+        do {
+            try self.audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
+            try self.audioRecorder = AVAudioRecorder(URL: CBDirectoryManager.micWriteURL()!, settings: recordSettings)
+            self.audioRecorder.prepareToRecord()
         }
         catch
         {
-            return
+            print("Error 1");
         }
-        
-        self.session.addInput(self.mic_input)
-        self.session.addOutput(self.output)
     }
     
-    func startIfNeeded()
+    static func sharedInstance() -> CBMicrophoneHandler
     {
-        if !self.session.running
+        return self.singleton
+    }
+    
+    func doRecordAction()
+    {
+        if !self.audioRecorder.recording
         {
-            self.session.startRunning()
+            do {
+                try self.audioSession.setActive(true)
+                audioRecorder.record()
+            }
+            catch
+            {
+                print("Error 2")
+            }
         }
     }
     
-    func stopIfStarted()
-    {
-        if self.session.running
-        {
-            self.session.stopRunning()
-        }
-    }
-    
-    func toggleRunning()
-    {
-        if self.session.running
-        {
-            self.session.stopRunning()
-        }
-        else
-        {
-            self.session.startRunning()
-        }
-    }
-    
-    func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!)
-    {
-        self.sendDataToDelegate(sampleBuffer)
-    }
-    
-    func sendDataToDelegate(buffer: CMSampleBuffer!)
-    {
-        let block = CMSampleBufferGetDataBuffer(buffer)
-        var length = 0
-        var data: UnsafeMutablePointer<Int8> = nil
+    func doStopAction() {
+        self.audioRecorder.stop()
         
-        var status = CMBlockBufferGetDataPointer(block!, 0, nil, &length, &data)    // TODO: check for errors
-        
-        let result = NSData(bytesNoCopy: data, length: length, freeWhenDone: false)
-        
-        self.delegate.handleBuffer(result)
+        do {
+            try self.audioSession.setActive(false)
+        }
+        catch
+        {
+            print("Error 3")
+        }
     }
 }

@@ -3,3 +3,4 @@ platform :ios, '9.1'
 use_frameworks!
 
 pod 'Socket.IO-Client-Swift'
+pod 'CocoaAsyncSocket'

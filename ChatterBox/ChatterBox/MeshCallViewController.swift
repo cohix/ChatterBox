@@ -12,7 +12,7 @@ import AVFoundation
 class MeshCallViewController: UIViewController
 {
     var micHandler: CBMicrophoneHandler!
-    var audioPlayer: CBAudioPlayer!
+    var audioPlayer: CBAudioPlayerOperation!
     
     @IBOutlet weak var logout: UIButton!
     
@@ -20,8 +20,8 @@ class MeshCallViewController: UIViewController
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.audioPlayer = CBAudioPlayer()
-        self.micHandler = CBMicrophoneHandler(delegate: self.audioPlayer)
+        //self.audioPlayer = CBAudioPlayer()
+        self.micHandler = CBMicrophoneHandler()
         self.start()
         
     }
@@ -32,7 +32,7 @@ class MeshCallViewController: UIViewController
    
     func start()
     {
-        self.micHandler.startIfNeeded()
+        self.micHandler.doRecordAction()
     }
     
     override func didReceiveMemoryWarning()
