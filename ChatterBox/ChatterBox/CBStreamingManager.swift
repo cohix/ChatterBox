@@ -13,12 +13,11 @@ class CBStreamingManager: NSObject, GCDAsyncSocketDelegate
 {
     var sockets: [GCDAsyncSocket]!
     var files: [NSURL]!
+    var audioDatas: [NSMutableData]!
     
     var highestPort: UInt16 = 8080
     
     var writeQueue: NSOperationQueue!
-    
-    var audioData = NSMutableData()
     
     private static let singleton: CBStreamingManager = CBStreamingManager()
     
@@ -26,6 +25,7 @@ class CBStreamingManager: NSObject, GCDAsyncSocketDelegate
     {
         self.sockets = [GCDAsyncSocket]()
         self.files = [NSURL]()
+        self.audioDatas = [NSMutableData]()
         
         self.writeQueue = NSOperationQueue()
     }
@@ -50,6 +50,7 @@ class CBStreamingManager: NSObject, GCDAsyncSocketDelegate
         
         self.sockets.append(newSock)
         self.files.append(CBDirectoryManager.randomWriteURL()!)
+        self.audioDatas.append(NSMutableData())
     }
     
     func acceptNewConnection() -> UInt16
@@ -67,6 +68,7 @@ class CBStreamingManager: NSObject, GCDAsyncSocketDelegate
         
         self.sockets.append(newSock)
         self.files.append(CBDirectoryManager.randomWriteURL()!)
+        self.audioDatas.append(NSMutableData())
         
         return self.highestPort
     }
@@ -78,14 +80,16 @@ class CBStreamingManager: NSObject, GCDAsyncSocketDelegate
         socket.setDelegate(self, delegateQueue: dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0))
         self.sockets.append(socket)
         self.files.append(CBDirectoryManager.randomWriteURL()!)
+        self.audioDatas.append(NSMutableData())
         
-        socket.readDataWithTimeout(-1, buffer: nil, bufferOffset: 0, tag: 0)
+        socket.readDataToData(GCDAsyncSocket.CRData(), withTimeout: -1, tag: 0)
     }
     
     func socket(sock: GCDAsyncSocket!, didConnectToHost host: String!, port: UInt16)
     {
         print("Connected to \(host) on \(port)")
-        sock.readDataWithTimeout(-1, buffer: nil, bufferOffset: 0, tag: 0)
+        
+        sock.readDataToData(GCDAsyncSocket.CRData(), withTimeout: -1, tag: 0)
     }
     
     func socketDidDisconnect(sock: GCDAsyncSocket!, withError err: NSError!)
@@ -94,33 +98,65 @@ class CBStreamingManager: NSObject, GCDAsyncSocketDelegate
         print(err.localizedDescription)
         guard let index = self.sockets.indexOf(sock) else {return}
         
-        let writeOp = CBWriteOperation(data: self.audioData, url: self.files[index])
-        self.writeQueue.addOperation(writeOp)
-        
         self.sockets.removeAtIndex(index)
         self.files.removeAtIndex(index)
-    }
-    
-    func socket(sock: GCDAsyncSocket!, didReadData data: NSData!, withTag tag: Int)
-    {
-        print("Reading data")
-        
-        //guard let index = self.sockets.indexOf(sock) else {return}
-        
-        self.audioData.appendData(data)
-        
-        sock.readDataWithTimeout(-1, buffer: nil, bufferOffset: 0, tag: 0)
+        self.audioDatas.removeAtIndex(index)
     }
     
     func writeMicAudioToAllSockets()
     {
         print("Writing mic data")
         
+        let message = NSMutableData()
+        
         let audio: NSData = NSData(contentsOfURL: CBDirectoryManager.micWriteURL()!)!
+        message.appendData( NSString(format: "%d", audio.length).dataUsingEncoding(NSUTF8StringEncoding)! )
+        message.appendData(GCDAsyncSocket.CRData())
         
         for sock in self.sockets
         {
-            sock.writeData(audio, withTimeout: -1, tag: 0)
+            sock.writeData(message , withTimeout: -1, tag: 0)
+        }
+    }
+    
+    func socket(sock: GCDAsyncSocket!, didWriteDataWithTag tag: Int)
+    {
+        if(tag == 0)
+        {
+            let audio: NSData = NSData(contentsOfURL: CBDirectoryManager.micWriteURL()!)!
+            
+            sock.writeData(audio, withTimeout: -1, tag: 1)
+        }
+    }
+    
+    func socket(sock: GCDAsyncSocket!, didReadData data: NSData!, withTag tag: Int)
+    {
+        print("Reading data")
+        let index: Int = self.sockets.indexOf(sock)!
+        
+        if tag == 0
+        {
+            print("Tag 0")
+            let strippedData: NSMutableData = NSMutableData(data: data)
+            strippedData.length = strippedData.length - 1
+            
+            let fullString = NSString(data: strippedData, encoding: NSUTF8StringEncoding)!
+            let length: UInt = UInt((Int(fullString as String)!))
+            
+            print(fullString)
+            print(length)
+            
+            sock.readDataToLength(length, withTimeout: -1, tag: 1)
+        }
+        else if tag == 1
+        {
+            self.audioDatas[index].appendData(data)
+            
+            let writeOp = CBWriteOperation(data: self.audioDatas[index], url: self.files[index])
+            self.writeQueue.addOperation(writeOp)
+            
+            self.audioDatas[index] = NSMutableData()
+            sock.readDataToData(GCDAsyncSocket.CRData(), withTimeout: -1, tag: 0)
         }
     }
     

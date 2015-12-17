@@ -23,15 +23,26 @@ class CBAudioPlayerOperation: NSOperation
     
     override func main()
     {
+        print("Playing audio")
         do {
             try self.audioPlayer = AVAudioPlayer(contentsOfURL: self.url, fileTypeHint: AVFileTypeAppleM4A)
-
-            self.audioPlayer.play()
         }
         catch let err as NSError
         {
             print("Error 4")
             print(err.localizedDescription)
         }
+        
+        if(self.audioPlayer != nil)
+        {
+            self.audioPlayer.prepareToPlay()
+            self.audioPlayer.play()
+        }
+        else
+        {
+            print("nil player")
+        }
+        
+        print("Just played audio")
     }
 }

@@ -10,7 +10,7 @@
 		3953DFA71C03BCCB0025805F /* CBMicrophoneHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3953DFA61C03BCCB0025805F /* CBMicrophoneHandler.swift */; };
 		3953DFA91C03C0920025805F /* CBAudioPlayerOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3953DFA81C03C0920025805F /* CBAudioPlayerOperation.swift */; };
 		39A631311C21DD5200357565 /* CBStreamingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A631301C21DD5200357565 /* CBStreamingManager.swift */; };
-		39A631331C21F09300357565 /* CPWriteOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A631321C21F09300357565 /* CPWriteOperation.swift */; };
+		39A631331C21F09300357565 /* CBWriteOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A631321C21F09300357565 /* CBWriteOperation.swift */; };
 		39A631351C21F1DA00357565 /* CBDirectoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A631341C21F1DA00357565 /* CBDirectoryManager.swift */; };
 		39A6313C1C22197900357565 /* CBAudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A6313B1C22197900357565 /* CBAudioManager.swift */; };
 		39A6313F1C223E2200357565 /* CBConnectionSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A6313E1C223E2200357565 /* CBConnectionSocket.swift */; };
@@ -34,7 +34,7 @@
 		3953DFA61C03BCCB0025805F /* CBMicrophoneHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBMicrophoneHandler.swift; sourceTree = "<group>"; };
 		3953DFA81C03C0920025805F /* CBAudioPlayerOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBAudioPlayerOperation.swift; sourceTree = "<group>"; };
 		39A631301C21DD5200357565 /* CBStreamingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBStreamingManager.swift; sourceTree = "<group>"; };
-		39A631321C21F09300357565 /* CPWriteOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPWriteOperation.swift; sourceTree = "<group>"; };
+		39A631321C21F09300357565 /* CBWriteOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBWriteOperation.swift; sourceTree = "<group>"; };
 		39A631341C21F1DA00357565 /* CBDirectoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBDirectoryManager.swift; sourceTree = "<group>"; };
 		39A6313B1C22197900357565 /* CBAudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBAudioManager.swift; sourceTree = "<group>"; };
 		39A6313D1C223AE600357565 /* ChatterBox-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChatterBox-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 		39A631391C21F27600357565 /* Filesystem */ = {
 			isa = PBXGroup;
 			children = (
-				39A631321C21F09300357565 /* CPWriteOperation.swift */,
+				39A631321C21F09300357565 /* CBWriteOperation.swift */,
 				39A631341C21F1DA00357565 /* CBDirectoryManager.swift */,
 			);
 			name = Filesystem;
@@ -297,7 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39A631331C21F09300357565 /* CPWriteOperation.swift in Sources */,
+				39A631331C21F09300357565 /* CBWriteOperation.swift in Sources */,
 				E2AA24FF1C20C45D00B7C9D4 /* LoginViewController.swift in Sources */,
 				E2EAFA511C03CD9500B746E0 /* CBNetworkManager.swift in Sources */,
 				E2AA24F51C20C04000B7C9D4 /* SignupViewController.swift in Sources */,
