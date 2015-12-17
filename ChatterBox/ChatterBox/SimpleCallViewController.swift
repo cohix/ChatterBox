@@ -36,6 +36,7 @@ class SimpleCallViewController: UIViewController
         CBNetworkManager.sharedInstance().viewControllerDelegate = self
         self.connectionSocket = CBConnectionSocket()
         self.connectionSocket.start()
+        
         self.record.addTarget(self, action: Selector("pressButton"), forControlEvents: UIControlEvents.TouchDown)
         self.record.addTarget(self, action: Selector("releaseButton"), forControlEvents: UIControlEvents.TouchUpInside)
         self.call.addTarget(self, action: Selector("callUser"), forControlEvents: UIControlEvents.TouchUpInside)
@@ -68,7 +69,7 @@ class SimpleCallViewController: UIViewController
     {
         self.view.endEditing(true)
         
-        let ip = CBStreamingManager.sharedInstance().getWiFiAddress()
+        let ip = self.ipaddr.text
         
         CBStreamingManager.sharedInstance().newConnection(ip!, port: 8080)
     }
