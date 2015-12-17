@@ -26,16 +26,6 @@ class CBMicrophoneHandler: NSObject
         super.init()
         
         self.audioSession = AVAudioSession.sharedInstance()
-        
-        do {
-            try self.audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
-            try self.audioRecorder = AVAudioRecorder(URL: CBDirectoryManager.micWriteURL()!, settings: recordSettings)
-            self.audioRecorder.prepareToRecord()
-        }
-        catch
-        {
-            print("Error 1");
-        }
     }
     
     static func sharedInstance() -> CBMicrophoneHandler
@@ -45,6 +35,16 @@ class CBMicrophoneHandler: NSObject
     
     func doRecordAction()
     {
+        do {
+            try self.audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
+            try self.audioRecorder = AVAudioRecorder(URL: CBDirectoryManager.micWriteURL()!, settings: recordSettings)
+            self.audioRecorder.prepareToRecord()
+        }
+        catch
+        {
+            print("Error 1");
+        }
+        
         if !self.audioRecorder.recording
         {
             do {

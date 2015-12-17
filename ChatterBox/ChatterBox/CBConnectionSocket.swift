@@ -30,12 +30,6 @@ class CBConnectionSocket: NSObject, GCDAsyncSocketDelegate
     func socket(sock: GCDAsyncSocket!, didAcceptNewSocket newSocket: GCDAsyncSocket!) {
         print("Connection Socket accepted")
         
-        //        let newPort = CBStreamingManager.sharedInstance().acceptNewConnection()
-        //
-        //        sock.writeData(NSData(base64EncodedString: "\(newPort)", options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters), withTimeout: -1, tag: 0)
-        //
-        //        sock.disconnectAfterWriting()
-        
         CBStreamingManager.sharedInstance().addNewSocket(newSocket)
     }
 }

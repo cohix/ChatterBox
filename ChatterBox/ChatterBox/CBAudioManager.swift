@@ -11,11 +11,13 @@ import Foundation
 class CBAudioManager: NSObject
 {
     private var playQueue: NSOperationQueue!
+    private var operations: [CBAudioPlayerOperation]!
     private static let singleton: CBAudioManager = CBAudioManager()
     
     override init()
     {
         self.playQueue = NSOperationQueue()
+        self.operations = [CBAudioPlayerOperation]()
     }
     
     static func sharedInstance() -> CBAudioManager
@@ -23,8 +25,9 @@ class CBAudioManager: NSObject
         return singleton
     }
 
-    func queuePlayOperation(operation: CBAudioPlayerOperation)
+    func queuePlayOperation(op: CBAudioPlayerOperation)
     {
-        self.playQueue.addOperation(operation)
+        self.operations.append(op)
+        self.playQueue.addOperation(op)
     }
 }
