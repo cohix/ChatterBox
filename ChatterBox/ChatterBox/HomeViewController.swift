@@ -35,7 +35,7 @@ class HomeViewController: UIViewController
         self.meshcall.layer.borderWidth = 1
         self.meshcall.layer.borderColor = UIColor.blackColor().CGColor
         
-        
+        CBNetworkManager.sharedInstance().viewControllerDelegate = nil
         
     }
     
@@ -49,5 +49,13 @@ class HomeViewController: UIViewController
         // Dispose of any resources that can be recreated.
     }
     
+    func callSomeone()
+    {
+        print("Got here")
+        dispatch_async(dispatch_get_main_queue(), {()
+        in
+            self.presentViewController(ViewController(), animated: true, completion: nil)
+        })
+    }
     
 }

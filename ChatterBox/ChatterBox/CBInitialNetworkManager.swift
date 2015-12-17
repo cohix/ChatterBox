@@ -16,6 +16,7 @@ class CBInitialNetworkManager : NSObject , GCDAsyncSocketDelegate
 {
     var initialConnectionSocket : GCDAsyncSocket!
     var myport : JSON!
+
     var finalnetwork: CBNetworkManager!
     override init(){
         super.init()
@@ -41,6 +42,7 @@ class CBInitialNetworkManager : NSObject , GCDAsyncSocketDelegate
         
         let json = JSON(data: data2)
         print(json["port"].intValue)
+        self.finalnetwork = CBNetworkManager()
         CBNetworkManager.sharedInstance().initializeSocket(json["port"].intValue)
     }
     func socketDidDisconnect(sock: GCDAsyncSocket!, withError err: NSError!)

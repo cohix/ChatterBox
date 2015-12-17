@@ -245,9 +245,6 @@
                                 <state key="normal" title="Call Someone">
                                     <color key="titleColor" red="0.40705886994949492" green="0.40705886994949492" blue="0.40705886994949492" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="aUk-rw-NMx" kind="modal" id="jnp-lB-HUO"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qk2-wF-sSa" userLabel="meshcall">
                                 <rect key="frame" x="125" y="268" width="127" height="36"/>
@@ -397,7 +394,7 @@
                                 <color key="textColor" red="0.51434876689999998" green="0.74857954550000005" blue="0.50419656430000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="tc9-u7-3hS" userLabel="Chat Rooms">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="tc9-u7-3hS" userLabel="Users">
                                 <rect key="frame" x="67" y="182" width="240" height="288"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -424,8 +421,10 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="back" destination="hQy-W5-ibN" id="dPU-Xq-FWK"/>
+                        <outlet property="chatrooms" destination="tc9-u7-3hS" id="Nzq-tm-sqo"/>
                         <outlet property="logout" destination="5dl-OL-ZBK" id="l2Z-r3-2xm"/>
                         <outlet property="refresh" destination="a9D-lP-GLv" id="0Ae-Xf-xtE"/>
+                        <outlet property="userTable" destination="tc9-u7-3hS" id="Uc5-i7-ucF"/>
                         <outlet property="users" destination="tc9-u7-3hS" id="cI7-by-i3M"/>
                     </connections>
                 </viewController>
@@ -455,7 +454,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Yoi-I5-GWM"/>
-        <segue reference="rCK-3j-xd7"/>
+        <segue reference="6Ja-Vc-H7p"/>
+        <segue reference="XPB-pb-xvF"/>
     </inferredMetricsTieBreakers>
 </document>

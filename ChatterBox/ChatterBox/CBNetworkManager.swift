@@ -15,9 +15,13 @@ class CBNetworkManager : NSObject , GCDAsyncSocketDelegate
 {    
     var messageSocket: GCDAsyncSocket!
     static let singleton: CBNetworkManager = CBNetworkManager()
+    let end = "&endm;".dataUsingEncoding(NSUTF8StringEncoding)
     var initialConnectionSocket : GCDAsyncSocket!
     var myport : Int!
     var user: User!
+    var signinsuccess: Int!
+    
+    var viewControllerDelegate: UIViewController!
     
     override init(){
         super.init()
@@ -46,7 +50,39 @@ class CBNetworkManager : NSObject , GCDAsyncSocketDelegate
         print("Reading data")
         let data2 = NSMutableData(data: data)
         data2.length = data2.length - 6
-        // to be continued
+        
+        
+        print(NSString(data: data2, encoding: NSUTF8StringEncoding))
+        
+        let json = JSON(data: data2)
+        
+
+        if((json["signup"].stringValue) == "failure"){
+            self.user = nil
+            if(self.viewControllerDelegate != nil && self.viewControllerDelegate.respondsToSelector(Selector("signupFailed")))
+            {
+                self.viewControllerDelegate.performSelector(Selector("signupFailed"))
+            }
+        }
+        if((json["signup"].stringValue) == "success"){
+            if(self.viewControllerDelegate != nil && self.viewControllerDelegate.respondsToSelector(Selector("homeFromSignup")))
+            {
+                self.viewControllerDelegate.performSelector(Selector("homeFromSignup"))
+            }
+        }
+        if((json["login"].stringValue) == "failure"){
+            if(self.viewControllerDelegate != nil && self.viewControllerDelegate.respondsToSelector(Selector("loginFailed")))
+            {
+                self.viewControllerDelegate.performSelector(Selector("loginFailed"))
+            }
+        }
+        
+        if((json["login"].stringValue) == "success"){
+            if(self.viewControllerDelegate != nil && self.viewControllerDelegate.respondsToSelector(Selector("homeFromLogin")))
+            {
+                self.viewControllerDelegate.performSelector(Selector("homeFromLogin"))
+            }
+        }
     }
     
     func socket(sock: GCDAsyncSocket!, didConnectToHost host: String!, port: UInt16)
@@ -54,84 +90,69 @@ class CBNetworkManager : NSObject , GCDAsyncSocketDelegate
         print("Connected to \(host) on \(port)")
         sock.readDataWithTimeout(-1, tag: 0)
     }
-    func login(name: String, passwd: String)->Bool{
-        // let dic = ["username": "sav"]
-        //let jsonuser = JSON(dic)
-        //print(jsonuser)
-        user = User(uname: name,pword: passwd)
-       // if(!login(user)){
-     //       return false
-    //    }
-        return true
-    }
     func socketDidDisconnect(sock: GCDAsyncSocket!, withError err: NSError!)
     {
         print("Streaming manager disconnected a socket")
-        print(err.localizedDescription)
+        //print(err.localizedDescription)
         
     }
-    func signup(name: String, passwd: String)->Bool{
-        let jsonString = "{\"command\": \"signup\", \"name\": \"\(name)\", \"password\": \"\(passwd)\"}"
+    func socket(sock: GCDAsyncSocket!, didWriteDataWithTag tag: Int) {
+        sock.readDataToData(self.end!, withTimeout: -1, tag: 0)
+    }
+    func getAvailableUsers(){
+        let jsonString = "{\"command\": \"getpeople\"}"
         print(jsonString)
+        
+        let temp = NSMutableData()
         
         let jsonData: NSData = jsonString.dataUsingEncoding(NSUTF8StringEncoding)!
         print(jsonData)
         
-      //  let jsonObj = JSON(data: jsonData)
-      //  print(jsonObj)
+        temp.appendData(jsonData)
+        temp.appendData(self.end!)
         
-        self.messageSocket.writeData(jsonData, withTimeout: 10, tag: 0)
-       // self.messageSocket.emit("\(jsonString)&endm;")
+        self.messageSocket.writeData(temp, withTimeout: -1, tag: 0)
+        
+    }
+    func signup(name: String, passwd: String){
+        let jsonString = "{\"command\": \"signup\", \"name\": \"\(name)\", \"password\": \"\(passwd)\"}"
+        print(jsonString)
+        
+        let temp = NSMutableData()
+        
+        let jsonData: NSData = jsonString.dataUsingEncoding(NSUTF8StringEncoding)!
+        print(jsonData)
+        
+        temp.appendData(jsonData)
+        temp.appendData(self.end!)
+        
+        self.messageSocket.writeData(temp, withTimeout: -1, tag: 0)
+        
         user = User(uname: name,pword: passwd)
-       // if(!createUser(user)){
-         //   return false
-     //   }
-        return true
+    }
+    func login(name: String, passwd: String){
+        let jsonString = "{\"command\": \"login\", \"name\": \"\(name)\", \"password\": \"\(passwd)\"}"
+        print(jsonString)
+        
+        let temp = NSMutableData()
+        
+        let jsonData: NSData = jsonString.dataUsingEncoding(NSUTF8StringEncoding)!
+        print(jsonData)
+        
+        temp.appendData(jsonData)
+        temp.appendData(self.end!)
+        
+        self.messageSocket.writeData(temp, withTimeout: -1, tag: 0)
+        
+        self.user = User(uname: name,pword: passwd)
     }
     
-//    func setup(){
-//        print("Connecting new socket")
-//       
-
-//        self.messageSocket = SocketIOClient(socketURL: "159.203.26.158:" + myport["port"].stringValue)
-//        print("159.203.26.158:" + myport["port"].stringValue)
-//        self.addHandlers()
-//        self.messageSocket.connect(timeoutAfter: 10, withTimeoutHandler: {() -> Void
-//        in
-//            print("didnt connect")
-//        })
-   // }
     func getUserName()->String{
         if(user==nil){
             return ""
         }
         return user.getName()
     }
-    
-//    func addHandlers(){
-//        self.messageSocket.onAny {
-//            print("got event: \($0.event) with items \($0.items)")
-//        }
-//    }
-//    
-//    func createUser(user: User)->Bool{
-//      self.messageSocket.emit("&create;<" + user.getName() + ">&endm;<" + user.getPassword() + ";>endm;")
-//        return true
-//        
-//    }
-//    
-//    func login(user : User)->Bool{
-//        self.messageSocket.emit("&create;<" + user.getName() + ">&endm;<" + user.getPassword() + ";>endm;")
-//          return true
-//    }
-//    
-//    // not sure how we're approaching this. should we have the chat room classes? seems like kyle would access them from the db but maybe I'm wrong? do we have direct access to the db too?
-//    func joinRoom(){
-//        self.messageSocket.emit("&joinroom;<" + ">&endm;")
-//    }
-//    
-//    func privateCall(user: User){
-//        self.messageSocket.emit("&private;<" + user.username + ">&endm;")
-//    }
+ 
 }
-//
+
